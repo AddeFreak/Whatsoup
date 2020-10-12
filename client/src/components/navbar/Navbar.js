@@ -1,6 +1,5 @@
 import React from 'react';
 import Backbutton from '../buttons/Backbutton'
-import Addbutton from '../buttons/Addbutton'
 import Nextbutton from '../buttons/Nextbutton'
 import Checkoutbutton from '../buttons/Checkoutbutton'
 import styles from './navbarStyle.module.css'
@@ -9,7 +8,8 @@ import styles from './navbarStyle.module.css'
 const Navbar = (props) => {
     return (
         <div className={styles.Navbar}>
-            <div className={styles.Upperbutt}> <Backbutton />
+            <div className={styles.Upperbutt}>
+                <Backbutton />
                 <Checkoutbutton />
             </div>
             <div className={styles.Souplogo}>

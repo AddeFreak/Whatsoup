@@ -1,11 +1,12 @@
 import React from 'react';
 
+import buttonsStyle from './buttonsStyle.module.css'
 
 
 
 const backButton = () => {
     return (
-        <button>
+        <button className={buttonsStyle.backCheckout}>
             BACK
         </button>
     );

@@ -1,8 +1,9 @@
 import React from 'react';
+import buttonsStyle from './buttonsStyle.module.css'
 
 const Checkoutbutton = () => {
     return (
-        <button>
+        <button className={buttonsStyle.backCheckout}>
             CHECKOUT
         </button>
     );

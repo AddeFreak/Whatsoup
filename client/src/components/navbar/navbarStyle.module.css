@@ -8,30 +8,33 @@ top: 0px;
 
 background: #f7feac
 }
-.Backbutton {
+/* .Backbutton {
     justify-content: flex-start;
-display:flex;
-}
+    display:flex;
+} */
 .Upperbutt{
-justify-content: space-between;
-display:flex;
+ display:flex;
+ justify-content: space-between;
+ padding: 10px;
 }
 .Nextstyle{
     display:flex;
  justify-content:flex-end;
- margin-top: 35px;
- margin-right: 5px;
+ /* margin-top: 35px;
+ margin-right: 5px; */
+ padding:10px;
 }
 
 .Souplogo{
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    /* margin-top: 30px;
     margin-left: 6px;
-    margin-right: 7px;
+    margin-right: 7px; */
+    padding:10px;
     font-family: 'Lobster', cursive;
     color: black;
-    font-size: xx-large;
+    font-size: 40px;
 
 }
 
