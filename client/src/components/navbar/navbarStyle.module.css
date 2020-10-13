@@ -18,26 +18,31 @@ background: #f7feac
  padding: 10px;
 }
 .Nextstyle{
-    display:flex;
+display:flex;
  justify-content:flex-end;
  /* margin-top: 35px;
  margin-right: 5px; */
  padding:10px;
 }
 
-.Souplogo{
+.namePrice{
     display: flex;
     justify-content: space-between;
-    /* margin-top: 30px;
-    margin-left: 6px;
-    margin-right: 7px; */
-    padding:10px;
-    font-family: 'Lobster', cursive;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    /* padding:10px; */
+
     color: black;
-    font-size: 40px;
-
+    font-size: 30px;
 }
-
+.name {
+    font-family: 'Lobster', cursive;
+    font-size: 45px;
+ }
+ .price {
+     margin-top: 10px;
+ }
 
 
 

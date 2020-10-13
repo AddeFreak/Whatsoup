@@ -29,8 +29,10 @@ const Soups = () => {
                         alt='Soup with taste of healing'
                     />
                     <section className={menuStyle.foodInfoContainer}>
-                        <h2 className={menuStyle.text}>The Healing</h2>
-                        <button> + </button>
+                        <div className={menuStyle.nameButton}>
+                            <h2>The Healing</h2>
+                            <button className={menuStyle.button}> + </button>
+                        </div>
                         <h5 className={menuStyle.text}>Butternut squash, red onions, garlic, coconut milk</h5>
                     </section>
                 </li>
@@ -41,35 +43,15 @@ const Soups = () => {
                         alt='Soup with taste of healing'
                     />
                     <section className={menuStyle.foodInfoContainer}>
-                        <h2 className={menuStyle.text}>The Healing</h2>
-                        <button> + </button>
+                        <div className={menuStyle.nameButton}>
+                            <h2>The Healing</h2>
+                            <button className={menuStyle.button}> + </button>
+                        </div>
                         <h5 className={menuStyle.text}>Butternut squash, red onions, garlic, coconut milk</h5>
                     </section>
                 </li>
-                <li>
-                    <img
-                        className={menuStyle.img}
-                        src={healing}
-                        alt='Soup with taste of healing'
-                    />
-                    <section className={menuStyle.foodInfoContainer}>
-                        <h2 className={menuStyle.text}>The Healing</h2>
-                        <button> + </button>
-                        <h5 className={menuStyle.text}>Butternut squash, red onions, garlic, coconut milk</h5>
-                    </section>
-                </li>
-                <li>
-                    <img
-                        className={menuStyle.img}
-                        src={healing}
-                        alt='Soup with taste of healing'
-                    />
-                    <section className={menuStyle.foodInfoContainer}>
-                        <h2 className={menuStyle.text}>The Healing</h2>
-                        <button> + </button>
-                        <h5 className={menuStyle.text}>Butternut squash, red onions, garlic, coconut milk</h5>
-                    </section>
-                </li>
+
+
 
 
 

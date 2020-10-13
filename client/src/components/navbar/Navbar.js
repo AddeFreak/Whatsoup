@@ -12,9 +12,9 @@ const Navbar = (props) => {
                 <Backbutton />
                 <Checkoutbutton />
             </div>
-            <div className={styles.Souplogo}>
-                <div>{props.typeOfFood}</div>
-                <div>/ {props.price} SEK</div>
+            <div className={styles.namePrice}>
+                <div className={styles.name}>{props.typeOfFood}</div>
+                <div className={styles.price}>/ {props.price} SEK</div>
             </div>
             <div className={styles.Nextstyle}>
                 <Nextbutton />
