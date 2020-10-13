@@ -30,7 +30,7 @@ const Soups = () => {
                     />
                     <section className={menuStyle.foodInfoContainer}>
                         <div className={menuStyle.nameButton}>
-                            <h2>The Healing</h2>
+                            <h2>So Long Cold</h2>
                             <button className={menuStyle.button}> + </button>
                         </div>
                         <h5 className={menuStyle.text}>Butternut squash, red onions, garlic, coconut milk</h5>
