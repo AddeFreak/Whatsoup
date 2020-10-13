@@ -1,13 +1,17 @@
 import React from 'react';
-import Soups from './components/menu/Soups'
-import Shop from './shop/Shop'
+import FoodList from './components/menu/FoodList'
+import Checkout from './components/checkout/Checkout'
+import CheckoutState from './components/context/checkout/CheckoutState'
+
 
 function App() {
   return (
-    <React.Fragment>
-      <Shop />
-
-    </React.Fragment>
+    <CheckoutState>
+      <>
+        <Checkout />
+        <FoodList />
+      </>
+    </CheckoutState>
   );
 }
 

@@ -1,62 +1,55 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import checkoutContext from './contactContext'
-import checkoutReducer from './contactReducer'
+import CheckoutContext from './checkoutContext'
+//import checkoutReducer from './checkoutReducer'
 
-// import {
-//     GET_ORDER,
-//     ADD_FOOD,
-//     DELETE_FOOD,
+import {
+    GET_ORDER,
+    ADD_FOOD,
+    DELETE_FOOD,
 
-//   } from '../types'
+} from '../types'
 
 const CheckoutState = (props) => {
-    const initialState = {
-        food: [
-            {
-                id: '1',
-                name: 'The Healing',
-                type: 'Soup',
+    const [checkout, setCheckout] = useState([]);
 
-            },
-            {
-                id: '2',
-                name: 'The Healing',
-                type: 'Soup',
-            },
-            {
-                id: '3',
-                name: 'The Healing',
-                type: 'Soup',
-            },
-        ],
-    }
 
-    const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
-    //Add food
-    const addFood = (food) => {
-        food.id = uuidv4()
-        dispatch({ type: ADD_FOOD, payload: food })
-    }
-    //delete food
-    const deleteFood = (id) => {
-        dispatch({ type: DELETE_FOOD, payload: id })
-    }
+    //const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
+    // //Add food
+    // const addFood = (food) => {
+    //     food.id = uuidv4()
+    //     dispatch({ type: ADD_FOOD, payload: food })
+    // }
+    // //delete food
+    // const deleteFood = (id) => {
+    //     dispatch({ type: DELETE_FOOD, payload: id })
+    // }
+
+    // //delete checkout
+    // const deleteOrder = (id) => {
+
+    // }
+
+    // // show checkout
+    // const getOrder = (id) => {
+
+    // }
 
     return (
-        <ContactContext.Provider
-            value={{
-                food: state.allFood,
-                addFood,
-                deleteFood
+        <CheckoutContext.Provider
+            // value={{
+            //     food: state.allFood,
+            //     addFood,
+            //     deleteFood
 
-            }}
+            // }}
+            value={[checkout, setCheckout]}
         >
             {props.children}
-        </ContactContext.Provider>
+        </CheckoutContext.Provider>
     )
 }
 
-export default ContactState
+export default CheckoutState
