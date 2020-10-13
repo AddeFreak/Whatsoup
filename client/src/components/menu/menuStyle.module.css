@@ -22,16 +22,14 @@
 
 .foodInfoContainer {
  width: 85%;
- background: rgba(204, 204, 204, 0.8);
+ background: rgba(204, 204, 204, 0.6);
  position: absolute;
  right: 0px;
- z-index: 1000;
+ z-index: 100;
  color: black;
  padding: 5px;
  margin-top: -150px;
  font-family: Lobster;
-
-    
 }
 
 .text {
@@ -53,7 +51,7 @@
 .nameButton h2 {
     font-weight: 100;
     margin: 0;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 
