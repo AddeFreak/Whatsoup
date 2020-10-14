@@ -5,23 +5,29 @@ import AlertContext from '../context/alert/alertContext'
 
 
 const Soups = (props) => {
-    const [checkout, setCheckout] = useContext(CheckoutContext);
+    //const [checkout, setCheckout] = useContext(CheckoutContext);
+    const checkoutContext = useContext(CheckoutContext)
+    const { addFood } = checkoutContext
+
     const alertContext = useContext(AlertContext)
     const { setAlert } = alertContext
 
+    // const [food, setFood] = useState({
+    //     name: props.name,
+    //     price: props.price,
+    //     id: props.id,
+    //     type: props.type,
+    // })
 
-
-
+    const food = { name: props.name, price: props.price, id: props.id };
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
 
-        const soup = { name: props.name, price: props.price, nextItem: props.nextItem, type: props.type };
-
         setAlert(props.name, props.nextItem, props.type)
 
-        setCheckout(currentState => [...currentState, soup]);
+        addFood(food);
         //implement add to cart
     }
 
@@ -45,8 +51,6 @@ const Soups = (props) => {
                 </li>
             </ul>
         </div>
-
     )
 }
-
 export default Soups

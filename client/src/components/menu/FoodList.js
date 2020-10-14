@@ -18,7 +18,7 @@ const FoodList = () => {
             <Navbar typeOfFood='Soup' price='50' />
             {
                 database.map(item => (
-                    <Soups type={item.type} name={item.name} key={item.id} desc={item.desc} img={item.img} nextItem={item.nextItem} />
+                    <Soups type={item.type} name={item.name} id={item.id} key={item.id} desc={item.desc} img={item.img} nextItem={item.nextItem} />
                 ))}
         </div>
     )
