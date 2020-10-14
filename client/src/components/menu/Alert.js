@@ -1,6 +1,7 @@
 
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import AlertContext from '../context/alert/alertContext'
 
 const StyleAlert = styled.div`
   .alert-container {
@@ -18,6 +19,27 @@ const StyleAlert = styled.div`
     ${'' /* z-index: 1000;
     margin-top: -300px; */}
   }
+
+  .alert-Soup {
+  background: #ffb;
+ }
+
+ .alert-Protein {
+  background: #fec;
+}
+
+.alert-bread {
+  background: #cff;
+}
+.alert-spreads {
+  background: #dfd;
+}
+.alert-treats {
+  background: #ffb;
+}
+.alert-beverages {
+  background: #fec;
+}
 
 
  .name {
@@ -37,24 +59,46 @@ const StyleAlert = styled.div`
  }
 
 `
-
-const Alert = ({ alert }) => {
-  //const alertContext = useContext(AlertContext)
+const Alert = () => {
+  const alertContext = useContext(AlertContext)
   return (
-    alert !== null && (
+    alertContext.alerts.length > 0 &&
+    alertContext.alerts.map((alert) => (
       <StyleAlert>
-        <div className='alert-container'>
+        <div key={alert.id} className={`alert-container alert-${alert.type}`}>
           <button> x </button>
           <h1 className='name'> {alert.name}</h1>
           <h2 className='text'> You've placed {alert.name} in your shopping cart. Choose your amount or remove it with trash can</h2>
           <div> 1 </div>
           <button> DELETE</button>
           <button> ADD </button>
-          <button> GO TO {alert.food}</button>
+          <button> GO TO {alert.nextItem}</button>
         </div>
       </StyleAlert>
-    )
+    ))
   )
 }
 
+
 export default Alert
+
+// const Alert = ({ alert }) => {
+//   const alertContext = useContext(AlertContext)
+//   return (
+//     alert !== null && (
+//       <StyleAlert>
+//         <div className='alert-container'>
+//           <button> x </button>
+//           <h1 className='name'> {alert.name}</h1>
+//           <h2 className='text'> You've placed {alert.name} in your shopping cart. Choose your amount or remove it with trash can</h2>
+//           <div> 1 </div>
+//           <button> DELETE</button>
+//           <button> ADD </button>
+//           <button> GO TO {alert.food}</button>
+//         </div>
+
+
+//       </StyleAlert>
+//     )
+//   )
+// }

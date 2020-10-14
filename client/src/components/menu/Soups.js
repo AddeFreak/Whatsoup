@@ -1,32 +1,33 @@
 import React, { useState, useContext } from 'react'
 import menuStyle from './menuStyle.module.css'
-import Alert from './Alert'
 import CheckoutContext from '../context/checkout/checkoutContext'
+import AlertContext from '../context/alert/alertContext'
 
 
 const Soups = (props) => {
     const [checkout, setCheckout] = useContext(CheckoutContext);
+    const alertContext = useContext(AlertContext)
+    const { setAlert } = alertContext
 
-    const [alert, setAlert] = useState(null)
 
-    const showAlert = (name, food) => {
-        setAlert({ name, food })
-    }
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const soup = { name: props.name, price: props.price };
+
+        const soup = { name: props.name, price: props.price, nextItem: props.nextItem, type: props.type };
+
+        setAlert(props.name, props.nextItem, props.type)
+
         setCheckout(currentState => [...currentState, soup]);
         //implement add to cart
-        showAlert('The Heeealing', 'PROTEIN')
     }
 
 
     return (
         <div>
-            <Alert alert={alert} />
-
             <ul className={menuStyle.cards}>
                 <li>
                     <img
