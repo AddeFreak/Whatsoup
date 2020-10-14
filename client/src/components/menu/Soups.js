@@ -1,6 +1,4 @@
 import React, { useState, useContext } from 'react'
-import Navbar from '../navbar/Navbar'
-
 import menuStyle from './menuStyle.module.css'
 import Alert from './Alert'
 import CheckoutContext from '../context/checkout/checkoutContext'
@@ -9,8 +7,6 @@ import CheckoutContext from '../context/checkout/checkoutContext'
 const Soups = (props) => {
     const [checkout, setCheckout] = useContext(CheckoutContext);
 
-
-
     const [alert, setAlert] = useState(null)
 
     const showAlert = (name, food) => {
@@ -18,8 +14,8 @@ const Soups = (props) => {
     }
 
     const handleSubmit = (e) => {
-
         e.preventDefault()
+
         const soup = { name: props.name, price: props.price };
         setCheckout(currentState => [...currentState, soup]);
         //implement add to cart
@@ -30,7 +26,7 @@ const Soups = (props) => {
     return (
         <div>
             <Alert alert={alert} />
-            <Navbar typeOfFood='Soup' price='50' />
+
             <ul className={menuStyle.cards}>
                 <li>
                     <img

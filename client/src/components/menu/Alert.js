@@ -39,6 +39,7 @@ const StyleAlert = styled.div`
 `
 
 const Alert = ({ alert }) => {
+  //const alertContext = useContext(AlertContext)
   return (
     alert !== null && (
       <StyleAlert>
