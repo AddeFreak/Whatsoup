@@ -5,8 +5,6 @@ import React, { useContext } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 
 const Checkout = () => {
-    //const [checkout, setCheckout] = useContext(CheckoutContext)
-
     const checkoutContext = useContext(CheckoutContext)
     const { checkout } = checkoutContext
 

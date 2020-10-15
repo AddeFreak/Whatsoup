@@ -26,19 +26,38 @@ background: #ffb
     margin-left: 15px;
     margin-right: 15px;
     color: black;
-    font-size: 30px;
+    font-size: 25px;
  }
 
  .name {
     font-family: 'Lobster', cursive;
-    font-size: 45px;
+    font-size: 40px;
  }
 
  .price {
     margin-top: 10px;
  }
 
+.typeOfFood-Soup {
+  background: #ffb;
+ }
 
+ .typeOfFood-Protein {
+  background: #fec;
+}
+
+.typeOfFood-Bread {
+  background: #cff;
+}
+.typeOfFood-Spreads {
+  background: #dfd;
+}
+.typeOfFood-Treats {
+  background: #ffb;
+}
+.typeOfFood-Beverages {
+  background: #fec;
+}
 
 
 }

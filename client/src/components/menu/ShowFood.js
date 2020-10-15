@@ -16,6 +16,7 @@ const ShowFood = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
         setAlert(food.name, food.nextItem, food.type)
         addFood(food);
         console.log(food.type)
