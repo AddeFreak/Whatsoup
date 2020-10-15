@@ -16,6 +16,18 @@ const CheckoutState = (props) => {
 
     const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
+    //Show checkout
+    const showCheckout = () => {
+
+    }
+
+    //Delete checkout
+
+    //Increase item in checkout
+
+    //Delete item in checkout
+
+
     //Add item till checkout
     const addFood = (type, name, price) => {
         const id = uuidv4();
