@@ -1,7 +1,7 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import menuStyle from './menuStyle.module.css'
-import CheckoutContext from '../context/checkout/checkoutContext'
-import AlertContext from '../context/alert/alertContext'
+import CheckoutContext from '../../context/checkout/checkoutContext'
+import AlertContext from '../../context/alert/alertContext'
 //import { createGlobalStyle } from 'styled-components'
 
 

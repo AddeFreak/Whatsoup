@@ -1,7 +1,7 @@
 
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import AlertContext from '../context/alert/alertContext'
+import AlertContext from '../../context/alert/alertContext'
 
 const StyleAlert = styled.div`
   .alert-container {

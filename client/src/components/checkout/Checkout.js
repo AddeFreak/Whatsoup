@@ -2,7 +2,7 @@
 //Choose timeslot
 //order
 import React, { useContext } from 'react'
-import CheckoutContext from '../context/checkout/checkoutContext'
+import CheckoutContext from '../../context/checkout/checkoutContext'
 
 const Checkout = () => {
     //const [checkout, setCheckout] = useContext(CheckoutContext)
