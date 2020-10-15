@@ -18,6 +18,7 @@ const Soups = (props) => {
         e.preventDefault()
         setAlert(food.name, food.nextItem, food.type)
         addFood(food);
+        console.log(food.type)
     }
 
 

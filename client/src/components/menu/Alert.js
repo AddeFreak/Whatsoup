@@ -28,16 +28,16 @@ const StyleAlert = styled.div`
   background: #fec;
 }
 
-.alert-bread {
+.alert-Bread {
   background: #cff;
 }
-.alert-spreads {
+.alert-Spreads {
   background: #dfd;
 }
-.alert-treats {
+.alert-Treats {
   background: #ffb;
 }
-.alert-beverages {
+.alert-Beverages {
   background: #fec;
 }
 
@@ -59,11 +59,11 @@ const StyleAlert = styled.div`
  }
 
 `
-const Alert = () => {
+const Alert = (props) => {
   const alertContext = useContext(AlertContext)
   const { alert, removeAlert } = alertContext
 
-  console.log(alert)
+  console.log(props)
   const handleClick = (e) => {
     e.preventDefault()
     removeAlert()
@@ -71,7 +71,7 @@ const Alert = () => {
 
 
   return (
-    alertContext.alert !== null && (
+    alert !== null && (
       <StyleAlert>
         <div key={alert.id} className={`alert-container alert-${alert.type}`}>
           <button onClick={handleClick}> x </button>
