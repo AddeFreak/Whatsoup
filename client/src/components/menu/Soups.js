@@ -11,13 +11,13 @@ const Soups = (props) => {
     const { addFood } = checkoutContext
 
     const alertContext = useContext(AlertContext)
-    const { alert, setAlert } = alertContext
+    const { setAlert } = alertContext
 
     const food = { name: props.name, price: props.price, id: props.id, nextItem: props.nextItem, type: props.type };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        alertContext.setAlert(food.name, food.nextItem, food.type)
+        setAlert(food.name, food.nextItem, food.type)
         addFood(food);
 
     }

@@ -66,7 +66,7 @@ const Alert = () => {
   console.log(alert)
   const handleClick = (e) => {
     e.preventDefault()
-    alertContext.removeAlert()
+    removeAlert()
   }
 
 
