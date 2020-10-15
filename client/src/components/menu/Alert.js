@@ -61,44 +61,31 @@ const StyleAlert = styled.div`
 `
 const Alert = () => {
   const alertContext = useContext(AlertContext)
+  const { alert, removeAlert } = alertContext
+
+  console.log(alert)
+  const handleClick = (e) => {
+    e.preventDefault()
+    alertContext.removeAlert()
+  }
+
+
   return (
-    alertContext.alerts.length > 0 &&
-    alertContext.alerts.map((alert) => (
+    alertContext.alert !== null && (
       <StyleAlert>
         <div key={alert.id} className={`alert-container alert-${alert.type}`}>
-          <button> x </button>
+          <button onClick={handleClick}> x </button>
           <h1 className='name'> {alert.name}</h1>
-          <h2 className='text'> You've placed {alert.name} in your shopping cart. Choose your amount or remove it with trash can</h2>
+          <h2 className='text'> You placed {alert.name} in your shopping cart. Choose your amount or remove it with trash can</h2>
           <div> 1 </div>
           <button> DELETE</button>
           <button> ADD </button>
           <button> GO TO {alert.nextItem}</button>
         </div>
       </StyleAlert>
-    ))
+    )
   )
 }
 
 
 export default Alert
-
-// const Alert = ({ alert }) => {
-//   const alertContext = useContext(AlertContext)
-//   return (
-//     alert !== null && (
-//       <StyleAlert>
-//         <div className='alert-container'>
-//           <button> x </button>
-//           <h1 className='name'> {alert.name}</h1>
-//           <h2 className='text'> You've placed {alert.name} in your shopping cart. Choose your amount or remove it with trash can</h2>
-//           <div> 1 </div>
-//           <button> DELETE</button>
-//           <button> ADD </button>
-//           <button> GO TO {alert.food}</button>
-//         </div>
-
-
-//       </StyleAlert>
-//     )
-//   )
-// }

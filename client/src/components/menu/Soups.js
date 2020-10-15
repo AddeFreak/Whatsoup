@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import menuStyle from './menuStyle.module.css'
 import CheckoutContext from '../context/checkout/checkoutContext'
 import AlertContext from '../context/alert/alertContext'
+//import { createGlobalStyle } from 'styled-components'
 
 
 const Soups = (props) => {
@@ -10,25 +11,15 @@ const Soups = (props) => {
     const { addFood } = checkoutContext
 
     const alertContext = useContext(AlertContext)
-    const { setAlert } = alertContext
+    const { alert, setAlert } = alertContext
 
-    // const [food, setFood] = useState({
-    //     name: props.name,
-    //     price: props.price,
-    //     id: props.id,
-    //     type: props.type,
-    // })
-
-    const food = { name: props.name, price: props.price, id: props.id };
+    const food = { name: props.name, price: props.price, id: props.id, nextItem: props.nextItem, type: props.type };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-
-        setAlert(props.name, props.nextItem, props.type)
-
+        alertContext.setAlert(food.name, food.nextItem, food.type)
         addFood(food);
-        //implement add to cart
+
     }
 
 
