@@ -6,7 +6,6 @@ import AlertContext from '../context/alert/alertContext'
 
 
 const Soups = (props) => {
-    //const [checkout, setCheckout] = useContext(CheckoutContext);
     const checkoutContext = useContext(CheckoutContext)
     const { addFood } = checkoutContext
 
@@ -19,7 +18,6 @@ const Soups = (props) => {
         e.preventDefault()
         setAlert(food.name, food.nextItem, food.type)
         addFood(food);
-
     }
 
 
