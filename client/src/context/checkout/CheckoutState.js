@@ -17,9 +17,11 @@ const CheckoutState = (props) => {
     const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
     //Add item till checkout
-    const addFood = (food) => {
-        dispatch({ type: ADD_FOOD, payload: food })
+    const addFood = (type, name, price) => {
+        const id = uuidv4();
+        dispatch({ type: ADD_FOOD, payload: { type, name, price, id } })
     }
+
 
 
     return (
@@ -29,7 +31,6 @@ const CheckoutState = (props) => {
                 addFood,
                 // removeFood
             }}
-        // value={[checkout, setCheckout]}
         >
             {props.children}
         </CheckoutContext.Provider>

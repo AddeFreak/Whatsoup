@@ -1,4 +1,5 @@
 import React from 'react';
+//import { Link } from 'react-router-dom'
 
 import buttonsStyle from './buttonsStyle.module.css'
 
@@ -6,7 +7,7 @@ import buttonsStyle from './buttonsStyle.module.css'
 
 const backButton = () => {
     return (
-        <button className={buttonsStyle.backCheckout}>
+        <button className={buttonsStyle.backCheckout} >
             BACK
         </button>
     );

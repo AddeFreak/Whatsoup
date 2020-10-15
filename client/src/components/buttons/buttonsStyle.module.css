@@ -1,5 +1,13 @@
 .backCheckout {
 border-radius: 5px;
 background-color: transparent;
+cursor: pointer;
+border: 1px solid black;
+text-decoration: 'none';
 
-}
+    }
+/* 
+    .backCheckout :focus, :hover, :visited, :link, :active{
+        text-decoration: 'none';
+
+    } */

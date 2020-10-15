@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Backbutton from '../buttons/Backbutton'
 import Nextbutton from '../buttons/Nextbutton'
 import Checkoutbutton from '../buttons/Checkoutbutton'
-import styles from './navbarStyle.module.css'
+//import styles from './navbarStyle.module.css'
 import styled from 'styled-components'
 
 const Test = styled.div`
@@ -71,22 +71,22 @@ background: #ffb
 }`
 const Navbar = (props) => {
 
-    return (
-        <Test>
-            <div className={`.Navbar typeOfFood-${props.typeOfFood}`}>
-                <div className="Upperbutt">
-                    <Backbutton />
-                    <Checkoutbutton />
-                </div>
-                <div className="namePrice">
-                    <div className="name">{props.typeOfFood}</div>
-                    <div className="price">/ {props.price} SEK</div>
-                </div>
-                <div className="Nextstyle">
-                    <Nextbutton />
-                </div>
-            </div></Test>
-    );
+  return (
+    <Test>
+      <div className={`.Navbar typeOfFood-${props.typeOfFood}`}>
+        <div className="Upperbutt">
+          <Backbutton />
+          <Checkoutbutton />
+        </div>
+        <div className="namePrice">
+          <div className="name">{props.typeOfFood}</div>
+          <div className="price">/ {props.price} SEK</div>
+        </div>
+        <div className="Nextstyle">
+          <Nextbutton />
+        </div>
+      </div></Test>
+  );
 };
 
 export default Navbar;

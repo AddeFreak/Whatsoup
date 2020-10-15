@@ -63,7 +63,6 @@ const Alert = (props) => {
   const alertContext = useContext(AlertContext)
   const { alert, removeAlert } = alertContext
 
-  console.log(props)
   const handleClick = (e) => {
     e.preventDefault()
     removeAlert()

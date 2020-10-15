@@ -6,7 +6,7 @@ import Protein from './components/menu/Protein'
 import AlertState from './context/alert/AlertState'
 import Alert from './components/menu/Alert'
 import Checkout from './components/checkout/Checkout'
-import CheckoutPage from './components/pages/CheckoutPage'
+//import CheckoutPage from './components/pages/CheckoutPage'
 import Home from './components/pages/Home'
 import CheckoutState from './context/checkout/CheckoutState'
 
@@ -20,6 +20,7 @@ function App() {
             <Checkout />
 
 
+
             <Switch>
               <Route exact path='/' component={Home} />
               {/* <Route exact path='/login' component={Login} /> */}
@@ -28,7 +29,7 @@ function App() {
               {/*  <Route exact path='/bread' component={Bread} />
               <Route exact path='/spreads' component={Spreads} />
               <Route exact path='/beverages' component={Beverages} /> */}
-              <Route exact path='/checkout' component={CheckoutPage} />
+              <Route exact path='/checkout' component={Checkout} />
               {/* <Route component={NotFound} /> */}
             </Switch>
           </>

@@ -10,10 +10,10 @@ const Protein = () => {
 
 
     const database = [
-        { type: "Protein", id: 1, name: "Fried Tofu", desc: "100 gram", price: 50, img: fried, nextItem: "PROTEIN" },
-        { type: "Protein", id: 2, name: "Grilled Chicken", desc: "100 gram", price: 50, img: chicken, nextItem: "PROTEIN" },
-        { type: "Protein", id: 3, name: "Hand-peeled Shrimps", desc: "75 gam", price: 50, img: shrimp, nextItem: "PROTEIN" },
-        { type: "Protein", id: 4, name: "Grilled Beef", desc: "50 gram", price: 50, img: beef, nextItem: "PROTEIN" },
+        { type: "Protein", id: 6, name: "Fried Tofu", desc: "100 gram", price: 30, img: fried, nextItem: "PROTEIN" },
+        { type: "Protein", id: 7, name: "Grilled Chicken", desc: "100 gram", price: 30, img: chicken, nextItem: "PROTEIN" },
+        { type: "Protein", id: 8, name: "Hand-peeled Shrimps", desc: "75 gam", price: 30, img: shrimp, nextItem: "PROTEIN" },
+        { type: "Protein", id: 9, name: "Grilled Beef", desc: "50 gram", price: 30, img: beef, nextItem: "PROTEIN" },
 
     ]
 
@@ -23,7 +23,7 @@ const Protein = () => {
             <Navbar typeOfFood='Protein' price='30' />
             {
                 database.map(item => (
-                    <ShowFood type={item.type} name={item.name} id={item.id} key={item.id} desc={item.desc} img={item.img} nextItem={item.nextItem} />
+                    <ShowFood type={item.type} name={item.name} price={item.price} id={item.id} key={item.id} desc={item.desc} img={item.img} alt={item.alt} nextItem={item.nextItem} />
                 ))}
         </div>
     )
