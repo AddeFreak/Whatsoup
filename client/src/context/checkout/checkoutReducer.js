@@ -1,5 +1,6 @@
 import {
     ADD_FOOD,
+    CANCEL_CHECKOUT
 } from '../types'
 
 
@@ -9,6 +10,10 @@ export default (state, action) => {
             return {
                 ...state,
                 checkout: [...state.checkout, action.payload],
+            }
+        case CANCEL_CHECKOUT:
+            return {
+                checkout: []
             }
 
         default:

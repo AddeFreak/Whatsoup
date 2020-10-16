@@ -1,51 +1,66 @@
-// //hantera state
-// // namn, id, antal, radera, pris
-// //totalt pris
-// //knapp cancel och knapp pay  
-// import React, { useContext } from 'react'
-// import PropTypes from 'prop-types'
-// import CheckoutContext from '../../context/checkout/checkoutContext'
+//Good choice
+//Choose timeslot
+//order
+import React, { useContext } from 'react'
+import CheckoutContext from '../../context/checkout/checkoutContext'
+import styled from 'styled-components'
 
-// const Order = ({ food }) => {
-//     const checkoutContext = useContext(CheckoutContext)
-//     const { cancel } = checkoutContext
+const StyledCheckout = styled.div`
 
-//     const { id, name, type, price } = food
+.container {
+    border: 1px solid red;
+    color:blue;
+    width:200px;
+}
+`
 
-//     const cancel = () => {
-//         deleteFood(id)
-//         //go to start page?
+const Order = () => {
+    const checkoutContext = useContext(CheckoutContext)
+    const { checkout, cancelCheckout } = checkoutContext
 
-//     }
 
-//     return (
-//         <div>
-//             <h4>
-//                 {name}
 
-//             </h4>
-//             <h4>
-//                 {price}
+    const listItems = () => {
+        if (checkout.length > 0) {
+            const allItems = checkout.map(item => (
+                <div key={item.id}>
+                    {`${item.name} ${item.price}`}
+                </div>
+            ))
+            return allItems
+        } else {
+            return ''
+        }
+    }
 
-//             </h4>
+    const total = () => {
+        if (checkout.length > 0) {
+            const totalPrice = checkout.reduce((acc, curr) => acc + curr.price, 0)
+            return 'Total price: ' + totalPrice
+        } else {
+            return ''
+        }
+    }
 
-//             <p>
-//                 <button
-//                     className='btn btn-dark btn-sm'
-//                 //   onClick={() => payment()}
-//                 >
-//                     Pay
-//         </button>
-//                 <button onClick={cancel}>
-//                     Cancel
-//         </button>
-//             </p>
-//         </div>
-//     )
-// }
+    const handleClick = () => {
+        cancelCheckout()
+    }
 
-// ContactItem.propTypes = {
-//     contact: PropTypes.object.isRequired,
-// }
+    console.log(checkout)
 
-// export default ContactItem
+    return (
+        <StyledCheckout>
+            <div className='container'>
+                <span>Items in cart : {checkout.length}</span>
+                <br />
+                <h5>Products</h5>
+                <span>{listItems()}</span>
+                <h5>{total()}</h5>
+                <button type='reset' onClick={handleClick}> CANCEL</button>
+
+            </div>
+        </StyledCheckout>
+    )
+}
+
+export default Order

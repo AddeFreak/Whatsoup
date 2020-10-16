@@ -5,6 +5,7 @@ import checkoutReducer from './checkoutReducer'
 
 import {
     ADD_FOOD,
+    CANCEL_CHECKOUT,
     // GET_ORDER,
     // DELETE_FOOD,
 
@@ -16,13 +17,12 @@ const CheckoutState = (props) => {
 
     const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
-    //Show checkout
-    const showCheckout = () => {
 
-    }
 
     //Delete checkout
-
+    const cancelCheckout = () => {
+        dispatch({ type: CANCEL_CHECKOUT })
+    }
     //Increase item in checkout
 
     //Delete item in checkout
@@ -41,7 +41,7 @@ const CheckoutState = (props) => {
             value={{
                 checkout: state.checkout,
                 addFood,
-                // removeFood
+                cancelCheckout,
             }}
         >
             {props.children}
