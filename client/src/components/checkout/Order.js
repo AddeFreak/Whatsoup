@@ -51,7 +51,7 @@ const Order = () => {
     return (
         <StyledCheckout>
             <div className='container'>
-                <span>Items in cart : {checkout.length}</span>
+                <span>Items in cart : {}</span>
                 <br />
                 <h5>Products</h5>
                 <span>{listItems()}</span>

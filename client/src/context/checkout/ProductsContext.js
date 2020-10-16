@@ -1,16 +1,16 @@
-import React, { createContext, useState } from 'react';
-import { FoodList } from '../../menu/FoodList';
-export const ProductsContext = createContext()
+// import React, { createContext, useState } from 'react';
+// import { FoodList } from '../../menu/FoodList';
+// export const ProductsContext = createContext()
 
-const ProductsContextProvider = ({ children }) => {
+// const ProductsContextProvider = ({ children }) => {
 
-    const [products] = useState(FoodList);
+//     const [products] = useState(FoodList);
 
-    return (
-        <ProductsContext.Provider value={{ products }} >
-            { children}
-        </ProductsContext.Provider>
-    );
-}
+//     return (
+//         <ProductsContext.Provider value={{ products }} >
+//             { children}
+//         </ProductsContext.Provider>
+//     );
+// }
 
-export default ProductsContextProvider;
+// export default ProductsContextProvider;

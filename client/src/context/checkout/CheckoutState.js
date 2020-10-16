@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
@@ -15,9 +15,16 @@ const CheckoutState = (props) => {
 
     const initialState = { checkout: [] }
 
-    const [state, dispatch] = useReducer(checkoutReducer, initialState)
+    const [state, dispatch] = useReducer(checkoutReducer, initialState
+        //() => {
+        // const localData = localStorage.getItem('order')
+        // return localData ? JSON.parse(localData) : []
+        //}
+    )
 
-
+    /*  useEffect(() => {
+         localStorage.setItem('')
+     }, [state]) */
 
     //Delete checkout
     const cancelCheckout = () => {
@@ -31,7 +38,9 @@ const CheckoutState = (props) => {
     //Add item till checkout
     const addFood = (type, name, price) => {
         const id = uuidv4();
+
         dispatch({ type: ADD_FOOD, payload: { type, name, price, id } })
+        localStorage.setItem('order', JSON.stringify(id))
     }
 
 

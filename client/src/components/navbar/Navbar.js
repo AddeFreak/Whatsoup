@@ -1,7 +1,6 @@
 import React from 'react';
 import Backbutton from '../buttons/Backbutton'
-import Nextbutton from '../buttons/Nextbutton'
-import Checkoutbutton from '../buttons/Checkoutbutton'
+import LinkButton from '../buttons/LinkButton'
 //import styles from './navbarStyle.module.css'
 import styled from 'styled-components'
 
@@ -66,8 +65,6 @@ background: #ffb
 .typeOfFood-Beverages {
   background: #fec;
 }
-
-
 }`
 const Navbar = (props) => {
 
@@ -76,16 +73,17 @@ const Navbar = (props) => {
       <div className={`.Navbar typeOfFood-${props.typeOfFood}`}>
         <div className="Upperbutt">
           <Backbutton />
-          <Checkoutbutton />
+          <LinkButton to='/checkout'>CHECKOUT</LinkButton>
         </div>
         <div className="namePrice">
           <div className="name">{props.typeOfFood}</div>
           <div className="price">/ {props.price} SEK</div>
         </div>
         <div className="Nextstyle">
-          <Nextbutton />
+          <LinkButton to={props.next}>NEXT</LinkButton>
         </div>
-      </div></Test>
+      </div>
+    </Test>
   );
 };
 
