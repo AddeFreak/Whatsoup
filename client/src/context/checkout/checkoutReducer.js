@@ -1,12 +1,18 @@
 import {
     ADD_FOOD,
-    CANCEL_CHECKOUT
+    CANCEL_CHECKOUT,
+    UPDATE_CHECKOUT,
 } from '../types'
 
 
 export default (state, action) => {
     switch (action.type) {
         case ADD_FOOD:
+            return {
+                ...state,
+                checkout: [...state.checkout, action.payload],
+            }
+        case UPDATE_CHECKOUT:
             return {
                 ...state,
                 checkout: [...state.checkout, action.payload],

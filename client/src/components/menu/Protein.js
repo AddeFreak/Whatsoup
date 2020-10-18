@@ -5,6 +5,7 @@ import fried from '../../assets/Protein/friedtofu.png'
 import chicken from '../../assets/Protein/grilledchicken.png'
 import shrimp from '../../assets/Protein/shrimps.png'
 import beef from '../../assets/Protein/beef.png'
+import Alert from '../alert/Alert'
 
 const Protein = () => {
 
@@ -19,8 +20,8 @@ const Protein = () => {
 
     return (
         <div>
-
-            <Navbar typeOfFood='Protein' price='30' />
+            <Alert type={database.type} name={database.name} price={database.price} />
+            <Navbar typeOfFood='Protein' price='30' next='/bread' />
             {
                 database.map(item => (
                     <ShowFood type={item.type} name={item.name} price={item.price} id={item.id} key={item.id} desc={item.desc} img={item.img} alt={item.alt} nextItem={item.nextItem} />

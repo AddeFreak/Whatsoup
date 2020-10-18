@@ -17,7 +17,7 @@ const LinkButton = (props) => {
     } = props
     return (
         <button
-            className={buttonsStyle.backCheckout}
+            className={buttonsStyle.buttonWithBorder}
             {...rest} // `children` is just another prop!
             onClick={(event) => {
                 onClick && onClick(event)

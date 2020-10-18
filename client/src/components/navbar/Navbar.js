@@ -47,6 +47,7 @@ background: #ffb
 
 .typeOfFood-Soup {
   background: #ffb;
+
  }
 
  .typeOfFood-Protein {
