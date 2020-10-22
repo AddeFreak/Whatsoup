@@ -2,6 +2,7 @@ import {
     ADD_FOOD,
     CANCEL_CHECKOUT,
     UPDATE_CHECKOUT,
+    GET_CHECKOUT
 } from '../types'
 
 
@@ -12,6 +13,11 @@ export default (state, action) => {
                 ...state,
                 checkout: [...state.checkout, action.payload],
             }
+        case GET_CHECKOUT:
+            return {
+                ...state,
+                checkout: action.payload
+            }
         case UPDATE_CHECKOUT:
             return {
                 ...state,
@@ -19,8 +25,11 @@ export default (state, action) => {
             }
         case CANCEL_CHECKOUT:
             return {
-                checkout: []
-            }
+                ...state,
+                checkout: state.checkout.filter(
+                    order => order.id !== action.payload
+                )
+            };
 
         default:
             return state

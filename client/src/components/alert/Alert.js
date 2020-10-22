@@ -120,9 +120,9 @@ const Alert = (props) => {
             <DeleteButton />
             <AddButton type={type} name={name} price={price} />
           </section>
-          <section className='nextContainer'>
+          {/*  <section className='nextContainer'>
             <LinkButton to={'/' + alert.next}>NEXT</LinkButton>
-          </section>
+          </section> */}
         </div>
       </StyleAlert>
     )

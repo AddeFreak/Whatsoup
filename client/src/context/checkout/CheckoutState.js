@@ -1,17 +1,18 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useReducer } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
-
+import axios from 'axios'
 
 import {
     ADD_FOOD,
     CANCEL_CHECKOUT,
     UPDATE_CHECKOUT,
-    // GET_ORDER,
+    GET_CHECKOUT,
     // DELETE_FOOD,
 
 } from '../types'
+
 
 
 const CheckoutState = (props) => {
@@ -27,67 +28,94 @@ const CheckoutState = (props) => {
 
 
     //Delete checkout
-    const cancelCheckout = () => {
-        dispatch({ type: CANCEL_CHECKOUT })
+    const cancelCheckout = async id => {
+        try {
+            await axios.delete(`https://ey-whatsoup.firebaseio.com/order.json/`);
+            dispatch({ type: CANCEL_CHECKOUT, payload: id })
+
+        } catch (err) {
+            console.log(err);
+            // dispatch({
+            //   type: CHECKOUT_CANCEL_ERROR, 
+            //   payload: err.response.msg
+            // });
+        }
     }
+
     //Increase item in checkout
 
     //Delete item in checkout
 
 
-
-    /* const updateCheckout = () => {
-        if (localStorage.getItem("checkout") !== null) {
-            const fetchedCheckout = JSON.parse(localStorage.getItem("checkout"));
-            console.log(state.checkout)
-            dispatch({ type: UPDATE_CHECKOUT, payload: fetchedCheckout })
-
-        }
-    } */
+    /*  let order = { type, name, price }
+            const res = fetch('https://ey-whatsoup.firebaseio.com/order.json', {
+                method: 'POST',
+                body: JSON.stringify(order),
+                headers: { 'Content-Type': 'application/json' }
+            }).then(response => {
+                return response.json()
+            }).then(responseData => {
+                dispatch({ type: ADD_FOOD, payload: responseData })
+    
+            }) */
 
 
     //Add item till checkout
-    const addFood = (type, name, price) => {
-        const id = uuidv4();
+    const addFood = async (type, name, price) => {
+        // const id = uuidv4();
         let order = { type, name, price }
-        fetch('https://ey-whatsoup.firebaseio.com/order.json', {
-            method: 'POST',
-            body: JSON.stringify(order),
-            headers: { 'Content-Type': 'application/json' }
-        }).then(response => {
-            return response.json()
-        })/* .then(responseData => {
-            dispatch({ type: ADD_FOOD, payload: responseData })
-
-        }) */
-        /* const res = axios.post('/orders.json', type, name, price)
-            .then(response => console.log(response))
-            .catch(error => console.log(error)) */
-
-
-        /*  localStorage.setItem('food', JSON.stringify(food))
- 
-         let foodArray = Object.values(food)
-         foodArray.push(id) */
-
-        dispatch({ type: ADD_FOOD, payload: { type, name, price, id } })
-        console.log(state.checkout)
-        console.log()
-        console.log(JSON.stringify(state.checkout))
-
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }
+        try {
+            const res = await axios.post(
+                'https://ey-whatsoup.firebaseio.com/order.json',
+                order,
+                config
+            )
+            dispatch({
+                type: ADD_FOOD,
+                payload: res.data
+            })
+        } catch (err) {
+            //console.log('error')
+            //   dispatch({
+            //     type: CONTACT_ERROR,
+            //     payload: err.response.msg,
+        }
     }
+    const getCheckout = async () => {
+        try {
+            let res = await axios.get('https://ey-whatsoup.firebaseio.com/order.json')
 
-    /*  useEffect(() => {
-         localStorage.setItem("food", JSON.stringify(food));
-     },  [food])*/
+            const orders = [];
+            for (let key in res.data) {
+                orders.push({
+                    ...res.data[key],
+                    id: key
+                });
+            }
 
+            dispatch({ type: GET_CHECKOUT, payload: orders })
 
+        } catch (err) {
+            // dispatch({
+            //   type: CONTACT_ERROR,
+            //   payload: err.response.msg
+            // });
+            console.log('error - could not get checkout')
+        }
+    }
+    console.log(state.checkout)
     return (
         <CheckoutContext.Provider
             value={{
                 checkout: state.checkout,
                 addFood,
                 cancelCheckout,
+                getCheckout
             }}
         >
             {props.children}
