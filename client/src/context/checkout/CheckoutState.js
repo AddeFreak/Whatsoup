@@ -1,14 +1,17 @@
-import React, { useReducer } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import React, { useReducer, useEffect } from 'react'
+//import { v4 as uuidv4 } from 'uuid'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
 import axios from 'axios'
 
 import {
+    ADD_TO_FRIEND,
     ADD_FOOD,
     CANCEL_CHECKOUT,
     UPDATE_CHECKOUT,
     GET_CHECKOUT,
+    GET_FRIEND,
+    REMOVE_FRIEND_ITEM
     // DELETE_FOOD,
 
 } from '../types'
@@ -17,7 +20,7 @@ import {
 
 const CheckoutState = (props) => {
 
-    const initialState = { checkout: [] }
+    const initialState = { checkout: [], friend: [] }
 
     const [state, dispatch] = useReducer(checkoutReducer, initialState,
         // () => {
@@ -26,12 +29,59 @@ const CheckoutState = (props) => {
         // }
     )
 
-
-    //Delete checkout
-    const cancelCheckout = async id => {
+    //Add item to friend (soup, bread etc)
+    const addToFriend = async (type, price) => {
+        let friend = { type, price }
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }
         try {
-            await axios.delete(`https://ey-whatsoup.firebaseio.com/order.json/`);
-            dispatch({ type: CANCEL_CHECKOUT, payload: id })
+            const res = await axios.post(
+                'https://ey-whatsoup.firebaseio.com/friend.json',
+                friend,
+                config
+            )
+            dispatch({
+                type: ADD_TO_FRIEND,
+                payload: res.data
+            })
+
+        } catch (err) {
+            console.error('error - could not add food item to friend')
+            //   dispatch({
+            //     type: CONTACT_ERROR,
+            //     payload: err.response.msg,
+        }
+    }
+    const getFriend = async () => {
+        try {
+            let res = await axios.get('https://ey-whatsoup.firebaseio.com/friend.json')
+
+            const friendCheckout = [];
+            for (let key in res.data) {
+                friendCheckout.push({
+                    ...res.data[key],
+                    id: key
+                });
+            }
+
+            dispatch({ type: GET_FRIEND, payload: friendCheckout })
+
+        } catch (err) {
+            // dispatch({
+            //   type: CONTACT_ERROR,
+            //   payload: err.response.msg
+            // });
+            console.log('error - could not get checkout')
+        }
+    }
+    const removeFriendItem = async (id) => {
+
+        try {
+            await axios.delete(`https://ey-whatsoup.firebaseio.com/friend.json/`);
+            dispatch({ type: REMOVE_FRIEND_ITEM, payload: id })
 
         } catch (err) {
             console.log(err);
@@ -42,23 +92,10 @@ const CheckoutState = (props) => {
         }
     }
 
+
     //Increase item in checkout
 
     //Delete item in checkout
-
-
-    /*  let order = { type, name, price }
-            const res = fetch('https://ey-whatsoup.firebaseio.com/order.json', {
-                method: 'POST',
-                body: JSON.stringify(order),
-                headers: { 'Content-Type': 'application/json' }
-            }).then(response => {
-                return response.json()
-            }).then(responseData => {
-                dispatch({ type: ADD_FOOD, payload: responseData })
-    
-            }) */
-
 
     //Add item till checkout
     const addFood = async (type, name, price) => {
@@ -108,14 +145,33 @@ const CheckoutState = (props) => {
             console.log('error - could not get checkout')
         }
     }
-    console.log(state.checkout)
+
+    //Delete checkout
+    const cancelCheckout = async id => {
+        try {
+            await axios.delete(`https://ey-whatsoup.firebaseio.com/order.json/`);
+            dispatch({ type: CANCEL_CHECKOUT, payload: id })
+
+        } catch (err) {
+            console.log(err);
+            // dispatch({
+            //   type: CHECKOUT_CANCEL_ERROR, 
+            //   payload: err.response.msg
+            // });
+        }
+    }
+
     return (
         <CheckoutContext.Provider
             value={{
+                friend: state.friend,
                 checkout: state.checkout,
+                addToFriend,
+                getFriend,
                 addFood,
                 cancelCheckout,
-                getCheckout
+                getCheckout,
+                removeFriendItem
             }}
         >
             {props.children}

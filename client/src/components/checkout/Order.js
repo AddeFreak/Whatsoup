@@ -48,7 +48,6 @@ const Order = () => {
         cancelCheckout()
     }
 
-    console.log(checkout)
 
     return (
         <StyledOrder>
