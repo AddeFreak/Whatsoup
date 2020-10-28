@@ -80,7 +80,10 @@ const CheckoutState = (props) => {
     const removeFriendItem = async (id) => {
 
         try {
-            await axios.delete(`https://ey-whatsoup.firebaseio.com/friend.json/`);
+            await axios.delete(`https://ey-whatsoup.firebaseio.com/.json/`);
+
+
+
             dispatch({ type: REMOVE_FRIEND_ITEM, payload: id })
 
         } catch (err) {

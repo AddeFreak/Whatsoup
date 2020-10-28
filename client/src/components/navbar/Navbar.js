@@ -4,6 +4,7 @@ import LinkButton from '../buttons/LinkButton'
 //import styles from './navbarStyle.module.css'
 import styled from 'styled-components'
 
+import SignOutButton from '../SignOut/index';
 const Test = styled.div`
 @media (max-width: 768px){
 .Navbar {
@@ -80,6 +81,7 @@ const Navbar = (props) => {
           <div className="name">{props.typeOfFood}</div>
           <div className="price">/ {props.price} SEK</div>
         </div>
+        <div><SignOutButton /></div>
         <div className="Nextstyle">
           <LinkButton to={props.next}>NEXT</LinkButton>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { withAuthorization } from '../Session';
 const Style = styled.div`
     background-color: #dfd;
 
@@ -34,4 +34,6 @@ const Home = () => {
     )
 }
 
-export default Home
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(Home);

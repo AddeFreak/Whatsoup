@@ -27,10 +27,13 @@ const Friend = () => {
 
         addToFriend()
         getFriend()
+
         // eslint-disable-next-line
     }, [])
     const handleRemove = (product) => {
-
+        removeFriendItem(product)
+        console.log(product)
+        //window.location.reload()
     }
 
 
