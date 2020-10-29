@@ -1,47 +1,86 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AuthUserContext } from '../Session';
-
+import styled from 'styled-components'
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
+import DrawerToggleButton from './SideDrawer/DrawerToggleButton'
 
-const Navigation = () => (
+const Navigation = (props) => (
     <AuthUserContext.Consumer>
         {authUser =>
-            authUser ? <NavigationAuth /> : <NavigationNonAuth />
+            authUser ? <NavigationAuth click={props.drawerClickHandler} /> : <NavigationNonAuth />
         }
     </AuthUserContext.Consumer>
 );
+const NavStyle = styled.div`
 
-const NavigationAuth = () => (
-    <ul>
-        <li>
-            <Link to={ROUTES.LANDING}>Landing</Link>
-        </li>
-        <li>
-            <Link to={ROUTES.HOME}>Home</Link>
-        </li>
-        <Link to={ROUTES.SOUP}>Soup</Link>
-        <li>
-        </li>
-        <Link to={ROUTES.TREATS}>Treats</Link>
-        <li>
+@media (max-width: 768px){
+   
+.nav-links {
+    display: none;
+flex-flow: row nowrap;
+justify-content: space-evenly;
+align-items: center;
+width: 35vw;
+}
 
-        </li>
-        <Link to={ROUTES.BREAD}>Bread</Link>
-        <li>
 
-        </li>
-        <Link to={ROUTES.SPREADS}>Spreads</Link>
-        <li>
+}
 
-        </li>
-        <Link to={ROUTES.CHECKOUT}>Checkout</Link>
-        <li>
-            <SignOutButton />
-        </li>
-    </ul>
+
+
+
+
+`
+
+const NavigationAuth = props => (
+    <NavStyle >
+        <ul className="nav-links">
+            <li>
+                <Link to={ROUTES.LANDING}>Landing</Link>
+            </li>
+            <li>
+                <Link to={ROUTES.HOME}>Home</Link>
+            </li>
+            <li><Link to={ROUTES.SOUP}>Soup</Link></li>
+
+
+            <li><Link to={ROUTES.PROTEIN}>Protein</Link></li>
+
+            <li><Link to={ROUTES.BREAD}>Bread</Link>
+            </li>
+
+            <li> <Link to={ROUTES.SPREADS}>Spreads</Link>
+            </li>
+
+            <li> <Link to={ROUTES.TREATS}>Treats</Link>
+            </li>
+
+            <li> <Link to={ROUTES.BEVERAGES}>Beverages</Link> </li>
+
+
+
+
+
+
+            <li>
+                <Link to={ROUTES.ADMIN}>Admin</Link>
+            </li>
+
+            <li> <Link to={ROUTES.CHECKOUT}>Checkout</Link> </li>
+
+            <li> <SignOutButton /></li>
+
+
+
+        </ul>
+        < div className="nav-toggle" >
+            <DrawerToggleButton click={props.click} />
+        </ div>
+    </NavStyle>
 );
+
 
 const NavigationNonAuth = () => (
     <ul>

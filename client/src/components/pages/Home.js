@@ -7,7 +7,7 @@ const Style = styled.div`
 
 h1 {
     font-family: 'Lobster', cursive;
-    
+    display:flex;
     height:100%;
     width: 100%;
     font-size: 10em;

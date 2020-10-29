@@ -81,7 +81,7 @@ const Navbar = (props) => {
           <div className="name">{props.typeOfFood}</div>
           <div className="price">/ {props.price} SEK</div>
         </div>
-        <div><SignOutButton /></div>
+        {/*  <div><SignOutButton /></div> */}
         <div className="Nextstyle">
           <LinkButton to={props.next}>NEXT</LinkButton>
         </div>

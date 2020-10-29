@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Soup from './components/menu/Soup'
 import Protein from './components/menu/Protein'
@@ -6,12 +6,13 @@ import Bread from './components/menu/Bread'
 import Spreads from './components/menu/Spreads'
 import Treats from './components/menu/Treats'
 import Beverages from './components/menu/Beverages'
-import Login from './components/pages/login'
+import Landing from '../src/components/pages/Landing'
 import SignUp from './components/SignUp/index'
 import SignIn from './components/SignIn/index'
 import Navigation from '../src/components/Navigation/index'
-import { withFirebase } from '../src/components/Firebase/index';
-import { AuthUserContext } from '../src/components/Session/index';
+import SideDrawer from '../src/components/Navigation/SideDrawer/SideDrawer'
+import Backdrop from '../src/components/Backdrop/Backdrop'
+
 import { withAuthentication } from '../src/components/Session/index';
 
 import AlertState from './context/alert/AlertState'
@@ -29,17 +30,39 @@ const App = () => {
   // if (!user.loggedIn) {
   //   return <span>User is logged out</span>;
   // }
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false)
+
+  const drawerToggleClickHandler = () => {
+    setSideDrawerOpen(true)
+    console.log('clovked')
+  }
+  const backdropClickHandler = () => {
+    setSideDrawerOpen(false)
+  }
+
+
+
+  let backdrop;
+
+  if (sideDrawerOpen) {
+
+    backdrop = <Backdrop click={backdropClickHandler} />
+  }
 
   return (
 
-    <AlertState>
+    <AlertState >
       <CheckoutState>
         <Router>
           <>
-            <Navigation />
+            <Navigation drawerClickHandler={drawerToggleClickHandler} />
+            <SideDrawer show={sideDrawerOpen} />
+            {backdrop}
+
             {/* <Alert /> */}
             {/* <Checkout /> */}
             <Switch>
+              <Route exact path={ROUTES.LANDING} component={Landing} />
               <Route exact path={ROUTES.HOME} component={Home} />
               <Route exact path={ROUTES.SIGN_UP} component={SignUp} />
               <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
