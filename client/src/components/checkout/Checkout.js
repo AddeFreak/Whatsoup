@@ -14,6 +14,7 @@ const Checkout = () => {
     useEffect(() => {
         getCheckout()
         getFriend()
+
         // eslint-disable-next-line
     }, [])
 

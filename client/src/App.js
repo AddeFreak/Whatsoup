@@ -9,9 +9,7 @@ import Beverages from './components/menu/Beverages'
 import Landing from '../src/components/pages/Landing'
 import SignUp from './components/SignUp/index'
 import SignIn from './components/SignIn/index'
-import Navigation from '../src/components/Navigation/index'
-import SideDrawer from '../src/components/Navigation/SideDrawer/SideDrawer'
-import Backdrop from '../src/components/Backdrop/Backdrop'
+
 
 import { withAuthentication } from '../src/components/Session/index';
 
@@ -30,34 +28,32 @@ const App = () => {
   // if (!user.loggedIn) {
   //   return <span>User is logged out</span>;
   // }
-  const [sideDrawerOpen, setSideDrawerOpen] = useState(false)
-
-  const drawerToggleClickHandler = () => {
-    setSideDrawerOpen(true)
-    console.log('clovked')
-  }
-  const backdropClickHandler = () => {
-    setSideDrawerOpen(false)
-  }
-
-
-
-  let backdrop;
-
-  if (sideDrawerOpen) {
-
-    backdrop = <Backdrop click={backdropClickHandler} />
-  }
-
+  /*  const [sideDrawerOpen, setSideDrawerOpen] = useState(false)
+ 
+   const drawerToggleClickHandler = () => {
+     setSideDrawerOpen(true)
+     console.log('clovked')
+   }
+   const backdropClickHandler = () => {
+     setSideDrawerOpen(false)
+   }
+ 
+ 
+ 
+   let backdrop;
+ 
+   if (sideDrawerOpen) {
+ 
+     backdrop = <Backdrop click={backdropClickHandler} />
+   }
+  */
   return (
 
     <AlertState >
       <CheckoutState>
         <Router>
           <>
-            <Navigation drawerClickHandler={drawerToggleClickHandler} />
-            <SideDrawer show={sideDrawerOpen} />
-            {backdrop}
+
 
             {/* <Alert /> */}
             {/* <Checkout /> */}

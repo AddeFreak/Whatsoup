@@ -1,18 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import { StyledOrder } from './StyledOrder'
 import LinkButton from '../buttons/LinkButton'
 
 const Order = () => {
     const checkoutContext = useContext(CheckoutContext)
-    const { checkout, cancelCheckout } = checkoutContext
+    const { getCheckout, checkout, cancelCheckout } = checkoutContext
 
+    useEffect(() => {
+        getCheckout()
 
+        // eslint-disable-next-line
+    }, [])
 
     const listItems = () => {
+        console.log(checkout)
         if (checkout.length > 0) {
             const allItems = checkout.map(item => (
-                <div key={item.id}>
+                <div key={item.id} >
                     {item.name}
                 </div>
             ))

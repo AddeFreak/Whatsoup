@@ -1,4 +1,4 @@
-import healing from '../../assets/Soups/healing.png'
+/* import healing from '../../assets/Soups/healing.png'
 import chillie from '../../assets/Soups/chillibillie.png'
 import solong from '../../assets/Soups/solongcold.png'
 import lowcarb from '../../assets/Soups/lowcarb.png'
@@ -12,4 +12,4 @@ const database = [
     { type: "Soup", key: 5, name: "Low Carb", desc: "Sweet potato, ginger, cummin marsala, garlic, coconut milk", price: 50, img: lowcarb, nextItem: "PROTEIN", next: "protein" }
 ]
 
-export default database
+export default database */
