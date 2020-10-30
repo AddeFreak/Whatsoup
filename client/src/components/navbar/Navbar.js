@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Backbutton from '../buttons/Backbutton'
 import LinkButton from '../buttons/LinkButton'
-//import styles from './navbarStyle.module.css'
+
 import styled from 'styled-components'
 import DrawerToggleButton from '../Navigation/SideDrawer/DrawerToggleButton'
 import Navigation from '../Navigation/index'
@@ -37,16 +37,16 @@ background: #ffb
     margin-left: 15px;
     margin-right: 15px;
     color: black;
-    font-size: 25px;
+    font-size: 21px;
  }
 
  .name {
     font-family: 'Lobster', cursive;
-    font-size: 40px;
+    font-size: 35px;
  }
 
  .price {
-    margin-top: 10px;
+    margin-top: 13px;
  }
 
 .typeOfFood-Soup {
