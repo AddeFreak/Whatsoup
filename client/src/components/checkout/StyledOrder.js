@@ -46,4 +46,25 @@ background-color: #dfd;
   padding-top: 16px;
     margin: 0;
 }
+.form{
+ display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align:center;
+ 
+    padding-right: 10px;
+   padding-left: 10px;
+}
+textarea{
+    margin-top:5px;
+}
+.address{
+     display: column;
+   
+    
+    text-align:center;
+ 
+    padding-right: 10px;
+   padding-left: 10px;
+}
 `

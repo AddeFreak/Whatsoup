@@ -7,7 +7,8 @@ import {
     GET_FRIEND,
     REMOVE_FRIEND_ITEM,
     //UPDATE_CHECKOUT
-    ADD_RESS
+    ADD_RESS,
+    GET_ADDRESS
 } from '../types'
 
 
@@ -17,6 +18,16 @@ export default (state, action) => {
             return {
                 ...state,
                 friend: [...state.friend, action.payload],
+            }
+        case GET_CHECKOUT:
+            return {
+                ...state,
+                checkout: action.payload
+            }
+        case GET_ADDRESS:
+            return {
+                ...state,
+                address: action.payload
             }
         case REMOVE_FRIEND_ITEM:
             return {
@@ -31,7 +42,7 @@ export default (state, action) => {
         case ADD_RESS:
             return {
                 ...state,
-                address: [...state.friend, action.payload],
+                address: [...state.address, action.payload],
             }
         // case UPDATE_CHECKOUT:
         //     return {

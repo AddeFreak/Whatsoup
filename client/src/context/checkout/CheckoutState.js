@@ -13,7 +13,8 @@ import {
     GET_FRIEND,
     REMOVE_FRIEND_ITEM,
     // DELETE_FOOD,
-    ADD_RESS
+    ADD_RESS,
+    GET_ADDRESS
 
 } from '../types'
 
@@ -21,7 +22,7 @@ import {
 
 const CheckoutState = (props) => {
 
-    const initialState = { checkout: [], friend: [] }
+    const initialState = { checkout: [], friend: [], address: [] }
 
     const [state, dispatch] = useReducer(checkoutReducer, initialState,
         // () => {
@@ -126,7 +127,7 @@ const CheckoutState = (props) => {
     //Delete item in checkout
 
     //Add item till checkout
-    const addRess = async (address) => {
+    const addRess = async (formData) => {
         // const id = uuidv4();
 
         const config = {
@@ -137,7 +138,7 @@ const CheckoutState = (props) => {
         try {
             const res = await axios.post(
                 'https://ey-whatsoup.firebaseio.com/address.json',
-                address,
+                formData,
                 config
             )
             dispatch({
@@ -151,6 +152,28 @@ const CheckoutState = (props) => {
             //     payload: err.response.msg,
         }
     }
+    const getAddress = async () => {
+        try {
+            let res = await axios.get('https://ey-whatsoup.firebaseio.com/address.json')
+
+            const address = [];
+            for (let key in res.data) {
+                address.push({
+                    ...res.data[key],
+                    id: key
+                });
+            }
+
+            dispatch({ type: GET_ADDRESS, payload: address })
+        } catch (err) {
+            // dispatch({
+            //   type: CONTACT_ERROR,
+            //   payload: err.response.msg
+            // });
+            console.log('error - could not get checkout')
+        }
+    }
+    console.log(state.address)
     const getCheckout = async () => {
         try {
             let res = await axios.get('https://ey-whatsoup.firebaseio.com/order.json')
@@ -194,13 +217,15 @@ const CheckoutState = (props) => {
             value={{
                 friend: state.friend,
                 checkout: state.checkout,
+                address: state.address,
                 addToFriend,
                 getFriend,
                 addFood,
                 cancelCheckout,
                 getCheckout,
                 removeFriendItem,
-                addRess
+                addRess,
+                getAddress
             }}
         >
             {props.children}

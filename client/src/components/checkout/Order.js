@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import { StyledOrder } from './StyledOrder'
 import LinkButton from '../buttons/LinkButton'
+import Address from './Adress'
 
 const Order = () => {
     const checkoutContext = useContext(CheckoutContext)
@@ -69,9 +70,11 @@ const Order = () => {
                     <h5 className='finalPrice'>{total()} sek</h5>
                 </section>
 
+                <section >Delivery Address</section>
+                <section className="form"><Address /></section>
                 <section className='cancelOk'>
                     <LinkButton to='/soup' onClick={Cancel}>CANCEL</LinkButton>
-                    <LinkButton>OK</LinkButton>
+                    <LinkButton to='/ordersummary'>OK</LinkButton>
                 </section>
 
             </div>

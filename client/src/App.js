@@ -9,6 +9,7 @@ import Beverages from './components/menu/Beverages'
 import Landing from '../src/components/pages/Landing'
 import SignUp from './components/SignUp/index'
 import SignIn from './components/SignIn/index'
+import OrderSummary from '../src/components/checkout/OrderSummary'
 
 
 import { withAuthentication } from '../src/components/Session/index';
@@ -71,6 +72,7 @@ const App = () => {
               <Route exact path='/checkout' component={Checkout} />
               <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
               <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+              <Route exact path={ROUTES.ORDERSUMMARY} component={OrderSummary} />
               {/* <Route component={NotFound} /> */}
             </Switch>
           </>
