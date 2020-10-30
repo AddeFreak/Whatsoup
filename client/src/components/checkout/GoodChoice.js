@@ -3,7 +3,7 @@ import styled from 'styled-components'
 //import LinkButton from '../buttons/LinkButton'
 import ChoiceButton from '../buttons/ChoiceButton'
 const GoodChoiceStyle = styled.div`
- border-top: 3px solid black;
+  border-top: 3px solid black;
 background: #ffb;
 font-family: 'Lobster', cursive;
 display: flex; 
@@ -11,7 +11,11 @@ justify-content: center;
 flex-wrap: wrap;
 align-items: center;
 text-align:center;
-padding-bottom: 20px;
+ margin: 0;
+    text-align: center;
+width:100%; 
+
+
 h1{
     font-size:45px;
     margin-bottom: 0;
@@ -21,26 +25,27 @@ h3{
     font-size: 25px;
      font-weight: 400;
 }
-.item {
-  width: 100%
-}
+
 .Linkstyle{
- display:flex;
+display:flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0px 0px 20px 0px;
 
-/*  justify-content: center;
- padding-bottom:10px;
- margin-right: 10px;
-flex-direction:column; */
-width: 100%;
-flex-wrap: wrap;
-/* align-items: center;
-text-align:center; */
 }
-.Linkstyle>div {
-  flex: 0 50%;
-  /*demo*/
-
-  box-sizing:border-box
+ul {
+    list-style: none;
+    ${'' /* display:flex; 
+    flex-direction: column; */}
+    display:flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    margin: 3px;
+    padding: 0px 0px 20px 0px;
 }
 
 `
@@ -50,14 +55,21 @@ const GoodChoice = () => {
         <GoodChoiceStyle>
             <h1>Good Choice!</h1>
             <h3>Do you feel pleased or do you want something more?</h3>
-            <div className="Linkstyle">
-                <div className="item"> <ChoiceButton to={'/soup'}>SOUP</ChoiceButton></div>
-                <div className="item"><ChoiceButton to={'/protein'}>PROTEIN</ChoiceButton></div>
-                <div className="item"> <ChoiceButton to={'/bread'}>BREADS</ChoiceButton></div>
-                <div className="item">  <ChoiceButton to={'/spreads'}>SPREADS</ChoiceButton></div>
-                <div className="item">  <ChoiceButton to={'/treats'}>TREATS</ChoiceButton></div>
-                <div className="item">  <ChoiceButton to={'/beverages'}>BEVERAGES</ChoiceButton></div>
-            </div>
+            <ul>
+                <li><ChoiceButton to={'/soup'}>SOUP</ChoiceButton></li>
+                <li><ChoiceButton to={'/protein'}>PROTEIN</ChoiceButton></li>
+                <li><ChoiceButton to={'/bread'}>BREADS</ChoiceButton></li>
+                <li><ChoiceButton to={'/spreads'}>SPREADS</ChoiceButton></li>
+                <li><ChoiceButton to={'/treats'}>TREATS</ChoiceButton></li>
+                <li><ChoiceButton to={'/beverages'}>BEVERAGES</ChoiceButton></li>
+
+
+
+
+
+
+
+            </ul>
         </GoodChoiceStyle>
     );
 };
