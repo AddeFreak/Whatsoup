@@ -4,10 +4,10 @@ export const StyledOrder = styled.div`
 background-color: #dfd;
 
 .container {
-    border: 1px solid red;
+    border-top: 2px solid black;
     height: 100vh;
     background: #dfd;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: lighter;
     padding-top: 10px; 
     padding-bottom: 10px;
@@ -33,7 +33,7 @@ background-color: #dfd;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0;
+ 
     padding-right: 10px;
    padding-left: 10px;
 }
@@ -43,7 +43,7 @@ background-color: #dfd;
     font-family: Lobster;
     font-size: 25px;
     font-weight: 100;
-    margin-top: 0;
+  padding-top: 16px;
     margin: 0;
 }
 `
