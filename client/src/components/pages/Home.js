@@ -1,35 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
 import { withAuthorization } from '../Session';
+import Logo from '../../assets/logo.png'
+
+
 const Style = styled.div`
     background-color: #dfd;
+font-family: 'Lobster', cursive;
+display: flex;
+position:absolute;
+ flex-direction:column;
+  align-items: center;
+background-color: #dfd;
+height:100%;
+width: 100%;
 
-
-h1 {
-    font-family: 'Lobster', cursive;
-    display:flex;
-    height:100%;
-    width: 100%;
-    font-size: 10em;
-}
-
-h2 {
-    height: 35%;
-    width: 100%;
-}
 
 `
 
+const Loggo = styled.img`
 
+
+
+
+
+
+justify-content: center;
+background-color: #dfd;
+
+width: 100%;
+
+`
 
 
 const Home = () => {
     return (
         <Style>
-            <div>
-                <h1> Eey! </h1>
-                <h2> Whats'oup? </h2>
-            </div>
+            <Loggo src={Logo} />
         </Style>
     )
 }

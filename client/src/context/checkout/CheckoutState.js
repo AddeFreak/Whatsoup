@@ -11,8 +11,9 @@ import {
     UPDATE_CHECKOUT,
     GET_CHECKOUT,
     GET_FRIEND,
-    REMOVE_FRIEND_ITEM
+    REMOVE_FRIEND_ITEM,
     // DELETE_FOOD,
+    ADD_RESS
 
 } from '../types'
 
@@ -95,12 +96,6 @@ const CheckoutState = (props) => {
         }
     }
 
-
-    //Increase item in checkout
-
-    //Delete item in checkout
-
-    //Add item till checkout
     const addFood = async (type, name, price) => {
         // const id = uuidv4();
         let order = { type, name, price }
@@ -117,6 +112,36 @@ const CheckoutState = (props) => {
             )
             dispatch({
                 type: ADD_FOOD,
+                payload: res.data
+            })
+        } catch (err) {
+            //console.log('error')
+            //   dispatch({
+            //     type: CONTACT_ERROR,
+            //     payload: err.response.msg,
+        }
+    }
+    //Increase item in checkout
+
+    //Delete item in checkout
+
+    //Add item till checkout
+    const addRess = async (address) => {
+        // const id = uuidv4();
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }
+        try {
+            const res = await axios.post(
+                'https://ey-whatsoup.firebaseio.com/address.json',
+                address,
+                config
+            )
+            dispatch({
+                type: ADD_RESS,
                 payload: res.data
             })
         } catch (err) {
@@ -174,7 +199,8 @@ const CheckoutState = (props) => {
                 addFood,
                 cancelCheckout,
                 getCheckout,
-                removeFriendItem
+                removeFriendItem,
+                addRess
             }}
         >
             {props.children}

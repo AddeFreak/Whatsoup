@@ -5,6 +5,7 @@ import styled from 'styled-components'
 //import Friends from '../friend/Friends'
 import Friend from '../friend/Friend'
 import GoodChoice from './GoodChoice'
+import Address from './Adress'
 
 const CheckoutHeader = styled.div`
 background: #dfd;
@@ -40,6 +41,7 @@ const Checkout = () => {
             <CheckoutHeader>Checkout</CheckoutHeader>
             <GoodChoice />
             <Order />
+
             <Friend />
 
         </>

@@ -49,7 +49,7 @@ const Friend = () => {
 
         }
     }
-
+    console.log(friend)
 
     return (
         <div className="wrapper">

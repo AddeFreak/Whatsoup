@@ -6,14 +6,23 @@ import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import { PasswordForgetLink } from '../PasswordForget';
+import styled from 'styled-components'
 
+const Signdiv = styled.div`
+
+ display: flex;
+
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+`
 const SignInPage = () => (
-    <div>
+    <Signdiv>
         <h1>SignIn</h1>
         <SignInForm />
         <PasswordForgetLink />
         <SignUpLink />
-    </div>
+    </Signdiv>
 );
 
 const INITIAL_STATE = {

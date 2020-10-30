@@ -7,6 +7,7 @@ import {
     GET_FRIEND,
     REMOVE_FRIEND_ITEM,
     //UPDATE_CHECKOUT
+    ADD_RESS
 } from '../types'
 
 
@@ -20,12 +21,17 @@ export default (state, action) => {
         case REMOVE_FRIEND_ITEM:
             return {
                 ...state,
-                friend: state.friend.filter((item) => item.id !== action.payload),
+                friend: state.friend.filter((product) => product.id !== action.payload),
             };
         case GET_FRIEND:
             return {
                 ...state,
                 friend: action.payload
+            }
+        case ADD_RESS:
+            return {
+                ...state,
+                address: [...state.friend, action.payload],
             }
         // case UPDATE_CHECKOUT:
         //     return {
