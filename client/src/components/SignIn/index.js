@@ -10,11 +10,24 @@ import styled from 'styled-components'
 
 const Signdiv = styled.div`
 
- display: flex;
+  display: flex;
 
  flex-direction: column;
  justify-content: center;
- align-items: center;
+ align-items: center; 
+
+ form {
+         
+    text-align: center;
+
+ }
+
+ button {
+  
+     
+
+
+}
 `
 const SignInPage = () => (
     <Signdiv>
@@ -81,8 +94,7 @@ class SignInFormBase extends Component {
                 />
                 <button disabled={isInvalid} type="submit">
                     Sign In
-        </button>
-
+                </button>
                 {error && <p>{error.message}</p>}
             </form>
         );

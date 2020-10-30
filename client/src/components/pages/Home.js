@@ -6,7 +6,8 @@ import HomeButt from '../buttons/HomeButt'
 
 
 const Style = styled.div`
-    background-color: #dfd;
+     background-color: #dfd;
+    background-color: blue;
 font-family: 'Lobster', cursive;
 display: flex;
 position:absolute;
@@ -14,7 +15,7 @@ position:absolute;
   align-items: center;
 background-color: #dfd;
 height:100%;
-width: 100%;
+width: 100%; 
 
 
 `
@@ -29,7 +30,7 @@ justify-content: center;
 background-color: #dfd;
 height: 35%;
 width: 100%;
-margin-bottom:20px;
+margin-bottom:50px; 
 
 `
 

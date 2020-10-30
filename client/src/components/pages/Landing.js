@@ -17,30 +17,36 @@ height:100%;
 width: 100%;
 position: absolute;
 div{
-    margin-top: -200px;
-  display: flex;
- flex-wrap: wrap;
-justify-content: space-between;
- justify-content: center;
- align-items: center;
- 
-}
-form{
-    display: flex;
- flex-wrap: wrap;
- justify-content: space-around;
- flex-direction: column;
-}
-input{
-     display: flex;
- flex-wrap: wrap;
- justify-content: space-space-around;
-}
-button{
-      display: flex;
+  
+ margin-top: -52px;
+
+
 
  
 }
+form{
+   
+display: table-column;
+
+
+
+}
+input{
+    height: 30px;
+    width:150px;
+     display: flex;
+    
+  margin: 9px 8px;
+  border: 2px solid black;
+   border-radius: 5px;
+   
+}
+ button{
+ border: 1px solid black;
+   border-radius: 5px;
+   height: 25px;
+ 
+} 
 `
 const Whaddap = styled.img`
 
