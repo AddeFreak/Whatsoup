@@ -9,6 +9,7 @@ import GoodChoice from './GoodChoice'
 
 
 
+
 const CheckoutHeader = styled.div`
 background: #dfd;
 display: flex;
@@ -42,7 +43,7 @@ const Checkout = () => {
         <>
             <CheckoutHeader>Checkout</CheckoutHeader>
             <GoodChoice />
-            <Order />
+            <Order></Order>
 
 
             <Friend />
