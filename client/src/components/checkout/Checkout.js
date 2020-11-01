@@ -4,7 +4,7 @@ import Order from './Order'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import styled from 'styled-components'
 //import Friends from '../friend/Friends'
-import Friend from '../friend/Friend'
+
 import GoodChoice from './GoodChoice'
 
 
@@ -49,7 +49,7 @@ const Checkout = () => {
             <Order></Order>
 
 
-            <Friend />
+
 
         </>
     )

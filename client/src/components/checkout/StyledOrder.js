@@ -5,7 +5,7 @@ background-color: #dfd;
 
 .container {
     border-top: 2px solid black;
-    height: 100vh;
+    height: 100%;
     background: #dfd;
     font-size: 18px;
     font-weight: lighter;
@@ -13,7 +13,7 @@ background-color: #dfd;
     padding-bottom: 10px;
     margin: 0;
 }
-
+ 
 .container > h5 {
     margin: 0;
     padding-right: 10px;
@@ -55,6 +55,7 @@ input{
     border: 1px solid black;
     margin: 5px;
     width: 100%;
+    height:20px;
 }
 .form{
     margin-top:15px;
@@ -105,5 +106,10 @@ border: 1px solid black;
 }
 .address section {
     font-weight: 300;
+}
+.topay{
+    margin-top: 20px;
+text-align:center;
+font-family: Lobster;
 }
 `

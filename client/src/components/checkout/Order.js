@@ -79,6 +79,7 @@ const Order = () => {
 
 
                 <FriendOrder />
+                <section className="topay">Continue to payment?</section>
                 <section className='cancelOk'>
                     <LinkButton to='/soup' onClick={Cancel}>CANCEL</LinkButton>
                     <LinkButton to='/ordersummary'>OK</LinkButton>

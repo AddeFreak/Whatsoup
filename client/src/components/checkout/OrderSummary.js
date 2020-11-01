@@ -5,7 +5,8 @@ import styled from 'styled-components'
 //import Friends from '../friend/Friends'
 import Address from './Adress'
 import LinkButton from '../buttons/LinkButton'
-import { StyledOrder } from './StyledOrder'
+import { StyledSummary } from './StyledSummary'
+import MyCards from "../checkout/MyCards";
 
 
 
@@ -25,14 +26,14 @@ padding-bottom: 20px;
 
 const OrderSummary = () => {
     const checkoutContext = useContext(CheckoutContext)
-    const { getCheckout, getAddress, checkout, cancelCheckout, address } = checkoutContext
+    const { getCheckout, getAddress, checkout, cancelCheckout, address, friend, getFriend } = checkoutContext
 
 
 
     useEffect(() => {
         getCheckout()
         getAddress()
-
+        getFriend()
         // eslint-disable-next-line
     }, [])
     const listItems = () => {
@@ -93,16 +94,42 @@ const OrderSummary = () => {
         cancelCheckout()
     }
 
+    const ifFriend = () => {
+        if (friend.length > 0) {
+            const allItems = friend.map(item => (
+                <div key={item.id} >
+                    {item.type}
+                    {item.price}
+                </div>
+            ))
+            return allItems
+        } else {
+            return ''
+        }
+    }
+    const ftotal = () => {
 
+        if (friend.length > 0) {
+            const totalPrice = friend.reduce((acc, curr) => acc + curr.price, 0)
+            return totalPrice
 
+        } else {
+            return ''
 
+        }
+    }
+    const finalPrice = () => {
+        return ftotal() + total()
+    }
+
+    console.log(ifFriend())
 
     return (
         <>
             <CheckoutHeader>Checkout</CheckoutHeader>
 
 
-            <StyledOrder>
+            <StyledSummary>
                 <div className='container'>
                     <h5>YOUR ORDER</h5>
 
@@ -116,16 +143,27 @@ const OrderSummary = () => {
                         <h5>TOTAL PRICE</h5>
                         <h5 className='finalPrice'>{total()} sek</h5>
                     </section>
+                    <div>Friend
+                        {(() => {
+                            if (friend.length > 0) {
+                                return <div> <section>{ifFriend()}</section>
+                                    <section>{ftotal()}</section>
+                                    <section> Final price: {finalPrice()}</section></div>
+                            } else {
+                                return <p></p>;
+                            }
+                        })()}
+                    </div>
                     <section className="address"> Address{addressItems()}</section>
 
-
+                    <MyCards />
                     <section className='cancelOk'>
                         <LinkButton to='/soup' onClick={Cancel}>CANCEL</LinkButton>
                         <LinkButton>OK</LinkButton>
                     </section>
 
                 </div>
-            </StyledOrder>
+            </StyledSummary>
 
         </>
     )

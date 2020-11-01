@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import LinkButton from '../buttons/LinkButton'
-
+import Friend from './Friend'
 const SendGift = styled.div`
  
 
@@ -30,14 +30,18 @@ width:120px;
 
 
 const FriendOrder = () => {
+  const [showResults, setShowResults] = React.useState(false)
+  const onClick = () => setShowResults(true)
 
-    //bara namn och nummer
-    return (
-        <SendGift>
-            <h3>Would you like to send som delicious soup to a friend?</h3>
-            <div><LinkButton className="ideabutton">Great idea!</LinkButton></div>
-        </SendGift>
-    );
+
+  //bara namn och nummer
+  return (
+    <SendGift>
+      <h3>Would you like to send som delicious soup to a friend?</h3>
+      <div><LinkButton className="ideabutton" onClick={onClick}>Great idea!</LinkButton></div>
+      { showResults ? <Friend /> : null}
+    </SendGift>
+  );
 };
 
 export default FriendOrder;
