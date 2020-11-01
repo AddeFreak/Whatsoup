@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import styled from 'styled-components'
+import LinkButton from '../buttons/LinkButton'
 
 
 const ConfStyle = styled.div`
@@ -13,7 +14,9 @@ font-family: Lobster;
 font-size:35px;
 font-weight: 100;
 
-
+.rad{
+    font-family: 'roboto';
+}
 
 `
 const Comfirmation = () => {
@@ -47,7 +50,7 @@ const Comfirmation = () => {
         console.log(address)
         if (address.length > 0) {
             const allItems = address.map(item => (
-                <div className="rad" key={item.id} >
+                <div key={item.id} >
 
 
 
@@ -67,9 +70,11 @@ const Comfirmation = () => {
             <div>You will recive your order {addressItems()}</div> <p>
                 You will get a notification 5 minutes before we arrive.</p>
             <div>See you soon at {addressItem()}</div>
-
             <p> Please check your email for receipt and order details.</p>
-        </div></ConfStyle >
+            <LinkButton to="/home">GO TO START PAGE</LinkButton>
+        </div>
+
+        </ConfStyle >
     );
 };
 
