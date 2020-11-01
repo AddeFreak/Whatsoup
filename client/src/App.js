@@ -10,6 +10,8 @@ import Landing from '../src/components/pages/Landing'
 import SignUp from './components/SignUp/index'
 import SignIn from './components/SignIn/index'
 import OrderSummary from '../src/components/checkout/OrderSummary'
+import Confirmation from '../src/components/checkout/Comfirmation'
+import SignUpLanding from './components/SignUp/SingUp'
 
 
 import { withAuthentication } from '../src/components/Session/index';
@@ -73,6 +75,10 @@ const App = () => {
               <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
               <Route exact path={ROUTES.ADMIN} component={AdminPage} />
               <Route exact path={ROUTES.ORDERSUMMARY} component={OrderSummary} />
+              <Route exact path={ROUTES.CONFIRMATION} component={Confirmation} />
+              <Route exact path={ROUTES.SIGNUPLANDING} component={SignUpLanding} />
+
+
               {/* <Route component={NotFound} /> */}
             </Switch>
           </>

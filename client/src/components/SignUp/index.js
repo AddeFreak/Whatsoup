@@ -3,12 +3,39 @@ import { Link, withRouter} from 'react-router-dom';
 import { compose } from 'recompose';
 import * as ROUTES from '../../constants/routes';
 import { withFirebase } from '../Firebase';
+import styled from 'styled-components'
+import Logo from '../../assets/logo.png'
+
+const StyledSignup = styled.div`
+
+display: flex;
+
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+form {
+
+  text-align: center;
+
+}
+
+button {
+
+
+
+
+}
+`
+  
+
 
 const SignUpPage = () => (
-  <div>
+  
+  <StyledSignup>
     <h1>SignUp</h1>
         <SignUpForm />
-  </div>
+  </StyledSignup>
 );
 const INITIAL_STATE = {
     username: '',
@@ -112,7 +139,7 @@ const SignUpForm = compose(
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don't have an account? <Link to={ROUTES.SIGNUPLANDING}>Sign Up</Link>
   </p>
 );
  

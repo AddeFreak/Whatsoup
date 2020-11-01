@@ -31,25 +31,25 @@ const MyCards = () => {
                     name="cvc"
                     placeholder="CVC"
                     onChange={handleInputChange}
-                />
+                    required />
                 <input
                     type="date"
                     name="expiry"
                     placeholder="Expire Date"
                     onChange={handleInputChange}
-                />
+                    required />
                 <input
                     type="text"
                     name="name"
                     placeholder="Your Name"
                     onChange={handleInputChange}
-                />
+                    required />
                 <input
                     type="number"
                     name="number"
                     placeholder="Card Number"
                     onChange={handleInputChange}
-                />
+                    required />
             </form>
         </div>
     );

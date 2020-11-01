@@ -31,7 +31,7 @@ margin-top:7px;
 
 .totalPrice, .listItems {
     display: flex;
-    flex-direction: row;
+    flex-direction: wrap;
     justify-content: space-between;
  
     padding-right: 10px;
@@ -41,10 +41,65 @@ margin-top:7px;
 
 .finalPrice {
     font-family: Lobster;
+    font-size: 20px;
+    font-weight: 100;
+  padding-top: 16px;
+    margin: 0;
+    margin-top: 3px;
+}
+.friendorder{
+     display: column;
+   justify-content: space-between;
+   margin: 0;
+   padding-right: 5px;
+   padding-left: 5px;
+    margin-top:7px; 
+}
+.friend{
+font-size: 15px;
+    
+}
+/* .frienditems {
+       display: flex;
+     flex-direction: row;
+   justify-content: space-between;
+   margin: 0;
+     padding-right: 10px;
+   padding-left: 10px;
+margin-top:7px;
+} */
+
+/* .nameprice{
+      display: flex;
+     flex-direction: row;
+   justify-content: space-between;
+} */
+
+.frienditem {
+         display: flex;
+     flex-direction: row;
+   justify-content: space-between;
+}
+.final{
+      justify-content:center;
+      font-family: Lobster;
+        
     font-size: 25px;
     font-weight: 100;
   padding-top: 16px;
     margin: 0;
+}
+.tp{
+    font-size: 15px;
+}
+.total{
+    justify-content:center;
+      font-family: Lobster;
+        
+    font-size: 20px;
+    font-weight: 100;
+  padding-top: 16px;
+    margin-top: 3px;
 }
 
 .address{

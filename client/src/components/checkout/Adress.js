@@ -40,21 +40,21 @@ const ContactForm = () => {
                     placeholder="Name"
                     onChange={updateInput}
                     value={formData.name || ''}
-                />
+                    required />
                 <input
                     type="text"
                     name="address"
                     placeholder="Address"
                     onChange={updateInput}
                     value={formData.address || ''}
-                />
+                    required />
                 <input
                     type="text"
                     name="mobile"
                     placeholder="Phone"
                     onChange={updateInput}
                     value={formData.mobile || ''}
-                />
+                    required />
 
                 <textarea
                     type="text"

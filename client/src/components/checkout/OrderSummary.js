@@ -97,9 +97,9 @@ const OrderSummary = () => {
     const ifFriend = () => {
         if (friend.length > 0) {
             const allItems = friend.map(item => (
-                <div key={item.id} >
-                    {item.type}
-                    {item.price}
+                <div key={item.id} className='frienditem'>
+                    <div> {item.type}</div>
+                    <div> {item.price}</div>
                 </div>
             ))
             return allItems
@@ -140,26 +140,35 @@ const OrderSummary = () => {
                     </section>
 
                     <section className='totalPrice'>
-                        <h5>TOTAL PRICE</h5>
+                        <h5>PRICE FOR YOU</h5>
                         <h5 className='finalPrice'>{total()} sek</h5>
                     </section>
-                    <div>Friend
+                    <div className='friendorder'>
                         {(() => {
                             if (friend.length > 0) {
-                                return <div> <section>{ifFriend()}</section>
-                                    <section>{ftotal()}</section>
-                                    <section> Final price: {finalPrice()}</section></div>
+                                return <div className='friendorder'>
+                                    <h5 className='friend'>FRIEND ORDER</h5>
+                                    <div className='frienditems'>
+                                        <h5>{ifFriend()}</h5>
+                                    </div>
+                                    <section className='totalPrice'>
+                                        <h5>PRICE FOR FRIEND</h5>
+                                        <h5 className='total'>{total()} sek</h5>
+                                    </section>
+                                    <section className='totalPrice'>
+                                        <h5 className='tp'>TOTAL PRICE:</h5> <h5 className='final'>{finalPrice()} sek</h5></section>
+                                </div>
                             } else {
                                 return <p></p>;
                             }
                         })()}
                     </div>
-                    <section className="address"> Address{addressItems()}</section>
+                    <section className="address"> {addressItems()}</section>
 
                     <MyCards />
                     <section className='cancelOk'>
                         <LinkButton to='/soup' onClick={Cancel}>CANCEL</LinkButton>
-                        <LinkButton>OK</LinkButton>
+                        <LinkButton to='confirmation'>OK</LinkButton>
                     </section>
 
                 </div>

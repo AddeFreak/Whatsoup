@@ -44,18 +44,18 @@ const Alert = (props) => {
           <h1 className='name'>{alert.name}</h1>
           <p className='text'>You placed {alert.name} in your shopping cart.</p>
           <div className='amountAddRemoveItem'>
-            <div className='amount'>1</div>
+
             <DeleteButton />
-            <AddButton type={type} name={name} price={price} />
+            {/*    <AddButton type={type} name={name} price={price} /> */}
           </div>
-          <div className='nextContainer'>
+          {/* <div className='nextContainer'>
             <LinkButton to={'/' + alert.nextItem} onClick={closeAlert}>NEXT</LinkButton>
-          </div>
+          </div> */}
           <section className='ingredients-container'>
             <h3 className='name'>Ingredients</h3>
             <p className='text'>Ingredients list and carbs. Do adjustments here. We will fix it!</p>
             <div className='nextContainer'>
-              <LinkButton to={'/' + alert.nextItem}>READ MORE</LinkButton>
+              <LinkButton >READ MORE</LinkButton>
             </div>
           </section>
         </div>

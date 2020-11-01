@@ -24,6 +24,7 @@ transform: translateX(0);
 }
 .nav-links{
     height: 100%;
+   font-size: 20px;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -31,7 +32,7 @@ transform: translateX(0);
 }
 
 .side-drawer li {
-    margin: 0.5rem 0;
+    margin: 1rem 0;
 }
 .link {
     text-decoration: none;

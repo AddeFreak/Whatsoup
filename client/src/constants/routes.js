@@ -18,7 +18,8 @@ export const TREATS = '/treats';
 export const BEVERAGES = '/beverages';
 export const CHECKOUT = '/checkout';
 export const ORDERSUMMARY = '/ordersummary';
-
+export const CONFIRMATION = '/confirmation';
+export const SIGNUPLANDING = '/signuplanding'
 
 
 

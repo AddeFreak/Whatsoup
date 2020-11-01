@@ -11,7 +11,7 @@ const DeleteButton = () => {
 
     return (
         <>
-            <button className={buttonsStyle.buttonWithBorder}>DELETE</button>
+            <button className={buttonsStyle.buttonWithBorder}>REMOVE</button>
         </>
     )
 }
