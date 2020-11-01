@@ -1,10 +1,12 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
+
 import Order from './Order'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import styled from 'styled-components'
 //import Friends from '../friend/Friends'
 import Friend from '../friend/Friend'
 import GoodChoice from './GoodChoice'
+
 
 
 
@@ -23,6 +25,7 @@ padding-bottom: 20px;
 
 
 const Checkout = () => {
+
     const checkoutContext = useContext(CheckoutContext)
     const { getCheckout, getFriend } = checkoutContext
 
@@ -38,9 +41,9 @@ const Checkout = () => {
 
 
 
-
     return (
         <>
+
             <CheckoutHeader>Checkout</CheckoutHeader>
             <GoodChoice />
             <Order></Order>

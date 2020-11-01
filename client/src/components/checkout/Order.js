@@ -1,11 +1,14 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import { StyledOrder } from './StyledOrder'
 import LinkButton from '../buttons/LinkButton'
 import Address from './Adress'
 import FriendOrder from '../friend/FriendOrder'
 
+
+
 const Order = () => {
+
     const checkoutContext = useContext(CheckoutContext)
     const { getCheckout, checkout, cancelCheckout } = checkoutContext
 
@@ -73,6 +76,8 @@ const Order = () => {
 
                 <section className="addhead" >Delivery Address</section>
                 <section className="form"><Address /></section>
+
+
                 <FriendOrder />
                 <section className='cancelOk'>
                     <LinkButton to='/soup' onClick={Cancel}>CANCEL</LinkButton>

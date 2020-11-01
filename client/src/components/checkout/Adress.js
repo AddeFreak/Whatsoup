@@ -7,6 +7,7 @@ import axios from 'axios'
 
 
 const ContactForm = () => {
+
     const [formData, setFormData] = useState({})
     const checkoutContext = useContext(CheckoutContext)
     const { addRess } = checkoutContext
@@ -25,6 +26,7 @@ const ContactForm = () => {
             address: '',
             mobile: '',
             message: '',
+            date: ''
         })
 
 
@@ -57,10 +59,18 @@ const ContactForm = () => {
                 <textarea
                     type="text"
                     name="message"
-                    placeholder="   Anything else?"
+                    placeholder="Anything else?"
                     onChange={updateInput}
                     value={formData.message || ''}
                 ></textarea>
+                <input
+                    name="date"
+
+                    onChange={updateInput}
+                    value={formData.date || ''}
+                    type="datetime-local" />
+
+
                 <button type="submit">Submit</button>
             </form>
         </>

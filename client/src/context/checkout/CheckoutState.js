@@ -4,6 +4,7 @@ import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
 import axios from 'axios'
 
+
 import {
     ADD_TO_FRIEND,
     ADD_FOOD,
@@ -81,8 +82,13 @@ const CheckoutState = (props) => {
     }
     const removeFriendItem = async (id) => {
 
+
+
+
         try {
-            await axios.delete(`https://ey-whatsoup.firebaseio.com/.json/`);
+
+            await axios.delete(`https://ey-whatsoup.firebaseio.com/friend/.json/`
+            );
 
 
 

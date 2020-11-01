@@ -65,10 +65,11 @@ const OrderSummary = () => {
         if (address.length > 0) {
             const allItems = address.map(item => (
                 <div className="rad" key={item.id} >
-                    <section>Name {item.name}</section>
-                    <section>Address {item.address}</section>
-                    <section>Message</section>
+                    <section>Name: {item.name}</section>
+                    <section>Address: {item.address}</section>
+                    <section>Message:</section>
                     <p>"{item.message}"</p>
+                    <section >Date: {item.date}</section>
                 </div>
             ))
             return allItems

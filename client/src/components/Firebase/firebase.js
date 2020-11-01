@@ -37,7 +37,7 @@ class Firebase {
     user = uid => this.db.ref(`users/${uid}`);
 
     users = () => this.db.ref('users');
-
+    friend = () => this.db.ref('friend');
 }
 
 export default Firebase;

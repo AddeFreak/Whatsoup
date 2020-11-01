@@ -15,24 +15,24 @@ const Friend = () => {
         { type: "Beverages", id: 6, price: 25 }
     ]
 
-
-    const handleAdd = (product) => {
-
-        addToFriend(product.type, product.price)
-
-        window.location.reload()
-    }
-
     useEffect(() => {
 
-        addToFriend()
+
         getFriend()
 
         // eslint-disable-next-line
     }, [])
-    const handleRemove = (product) => {
-        removeFriendItem(product)
-        console.log(product)
+    const handleAdd = (product) => {
+
+        addToFriend(product.type, product.price)
+
+
+    }
+
+
+    const handleRemove = (props) => {
+        removeFriendItem()
+
         //window.location.reload()
     }
 
@@ -62,8 +62,8 @@ const Friend = () => {
                     <div key={product.id}>
                         <span>
                             <div>{product.type}</div>
-                            <button onClick={() => handleAdd(product)}>+</button>
-                            {<button onClick={() => handleRemove(product)}>-</button>}
+                            <button onClick={(e) => handleAdd(product)}>+</button>
+                            <button onClick={() => handleRemove()}>-</button>
                             <div>{product.price}</div>
                         </span>
                     </div>

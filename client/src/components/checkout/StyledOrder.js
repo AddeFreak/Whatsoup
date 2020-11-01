@@ -92,15 +92,18 @@ form button{
 textarea{
     margin-top:5px;
     width: 100%;
-
+border: 1px solid black;
 }
 .address{
      display: column;
    border: 1px solid black;
-    
+    font-weight: 300;
     text-align:center;
  
     padding-right: 10px;
    padding-left: 10px;
+}
+.address section {
+    font-weight: 300;
 }
 `
