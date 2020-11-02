@@ -58,9 +58,10 @@ const GoodChoice = () => {
             <ul>
                 <li><ChoiceButton to={'/soup'}>SOUP</ChoiceButton></li>
                 <li><ChoiceButton to={'/protein'}>PROTEIN</ChoiceButton></li>
-                <li><ChoiceButton to={'/bread'}>BREADS</ChoiceButton></li>
+                <li><ChoiceButton to={'/extras'}>EXTRAS</ChoiceButton></li>
+                {/* <li><ChoiceButton to={'/bread'}>BREADS</ChoiceButton></li>
                 <li><ChoiceButton to={'/spreads'}>SPREADS</ChoiceButton></li>
-                <li><ChoiceButton to={'/treats'}>TREATS</ChoiceButton></li>
+                <li><ChoiceButton to={'/treats'}>TREATS</ChoiceButton></li> */}
                 <li><ChoiceButton to={'/beverages'}>BEVERAGES</ChoiceButton></li>
 
 

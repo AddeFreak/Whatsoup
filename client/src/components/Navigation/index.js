@@ -47,15 +47,17 @@ const NavigationAuth = props => (
 
 
             <li><Link to={ROUTES.PROTEIN}>Protein</Link></li>
+            <li><Link to={ROUTES.EXTRAS}>Extras</Link></li>
 
-            <li><Link to={ROUTES.BREAD}>Bread</Link>
+
+            {/*  <li><Link to={ROUTES.BREAD}>Bread</Link>
             </li>
 
             <li> <Link to={ROUTES.SPREADS}>Spreads</Link>
             </li>
 
             <li> <Link to={ROUTES.TREATS}>Treats</Link>
-            </li>
+            </li> */}
 
             <li> <Link to={ROUTES.BEVERAGES}>Beverages</Link> </li>
 

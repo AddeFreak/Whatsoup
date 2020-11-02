@@ -58,7 +58,7 @@ background: #ffb
   background: #fec;
 }
 
-.typeOfFood-Bread {
+.typeOfFood-Extras {
   background: #cff;
 }
 .typeOfFood-Spreads {

@@ -19,13 +19,14 @@ const ChoiceButt = styled.button`
    width: 120px;
   */
 
- border-radius: 5px;
+ border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
-  border: 1px solid black;
+  border: 2px solid black;
   text-decoration: 'none';
   flex-wrap: wrap;
-  margin: 5px 1px 5px 0 ;
+  margin: 5px;
+  height: 40px;
   width: 118px;
   font-size: 15px;
   font-weight: 600;

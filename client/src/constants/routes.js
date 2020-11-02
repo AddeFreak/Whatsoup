@@ -11,6 +11,7 @@ export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const HOME = '/home';
 export const PROTEIN = '/protein';
+export const EXTRAS = '/extras';
 export const BREAD = '/bread';
 export const SOUP = '/soup';
 export const SPREADS = '/spreads';

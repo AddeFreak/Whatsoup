@@ -55,7 +55,7 @@ const sideDrawer = props => {
 
             <ul className="nav-links">
 
-                <li>  <Link to={ROUTES.LANDING}>Landing</Link>   </li>
+
 
 
                 <li>  <Link to={ROUTES.HOME}>Home</Link></li>
@@ -65,13 +65,11 @@ const sideDrawer = props => {
 
                 <li> <Link to={ROUTES.PROTEIN}>Protein</Link></li>
 
-                <li><Link to={ROUTES.BREAD}>Bread</Link>   </li>
+
+                <li><Link to={ROUTES.EXTRAS}>Extras</Link>   </li>
 
 
-                <li><Link to={ROUTES.SPREADS}>Spreads</Link> </li>
 
-
-                <li> <Link to={ROUTES.TREATS}>Treats</Link> </li>
 
 
 

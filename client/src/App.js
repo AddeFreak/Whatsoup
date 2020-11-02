@@ -5,6 +5,7 @@ import Protein from './components/menu/Protein'
 import Bread from './components/menu/Bread'
 import Spreads from './components/menu/Spreads'
 import Treats from './components/menu/Treats'
+import Extras from './components/menu/Extras'
 import Beverages from './components/menu/Beverages'
 import Landing from '../src/components/pages/Landing'
 import SignUp from './components/SignUp/index'
@@ -67,9 +68,10 @@ const App = () => {
               <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
               <Route exact path={ROUTES.SOUP} component={Soup} />
               <Route exact path={ROUTES.PROTEIN} component={Protein} />
-              <Route exact path='/bread' component={Bread} />
+              <Route exact path={ROUTES.EXTRAS} component={Extras} />
+              {/* <Route exact path='/bread' component={Bread} />
               <Route exact path='/spreads' component={Spreads} />
-              <Route exact path='/treats' component={Treats} />
+              <Route exact path='/treats' component={Treats} /> */}
               <Route exact path='/beverages' component={Beverages} />
               <Route exact path='/checkout' component={Checkout} />
               <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />

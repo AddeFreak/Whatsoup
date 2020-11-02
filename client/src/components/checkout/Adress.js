@@ -55,7 +55,12 @@ const ContactForm = () => {
                     onChange={updateInput}
                     value={formData.mobile || ''}
                     required />
+                <input
+                    name="date"
 
+                    onChange={updateInput}
+                    value={formData.date || ''}
+                    type="datetime-local" />
                 <textarea
                     type="text"
                     name="message"
@@ -63,12 +68,7 @@ const ContactForm = () => {
                     onChange={updateInput}
                     value={formData.message || ''}
                 ></textarea>
-                <input
-                    name="date"
 
-                    onChange={updateInput}
-                    value={formData.date || ''}
-                    type="datetime-local" />
 
 
                 <button type="submit">Submit</button>

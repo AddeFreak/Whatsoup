@@ -20,11 +20,14 @@ width:120px;
   border-radius: 5px;
     background-color: transparent;
     cursor: pointer;
-    border: 1px solid black;
+    border: 2px solid black;
    justify-content: center;
     margin:5px;
+    margin-bottom: 10px;
  text-align:center;
+ font-weight:600;
  padding: 5px;
+ height: 30px;
  }
 `
 

@@ -10,7 +10,7 @@ background-color: #dfd;
     font-size: 18px;
     font-weight: lighter;
     padding-top: 10px; 
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     margin: 0;
 }
 
@@ -24,11 +24,15 @@ background-color: #dfd;
    display: flex;
    justify-content: space-between;
    margin: 0;
+   
    padding-right: 5px;
    padding-left: 5px;
 margin-top:7px;
 }
-
+.cancelOk button {
+height: 30px;
+width: 300px;
+}
 .totalPrice, .listItems {
     display: flex;
     flex-direction: wrap;
@@ -36,6 +40,7 @@ margin-top:7px;
  
     padding-right: 10px;
    padding-left: 10px;
+   border-bottom: 1px solid black
 }
 
 
@@ -50,14 +55,20 @@ margin-top:7px;
 .friendorder{
      display: column;
    justify-content: space-between;
-   margin: 0;
-   padding-right: 5px;
-   padding-left: 5px;
+  
     margin-top:7px; 
+}
+.frienditem {
+  margin: 5px;
+   padding-left: 10px;
+    padding-right: 10px;
 }
 .friend{
 font-size: 15px;
-    
+   
+    margin-top: 10px;
+    padding-left: 10px;
+     padding-right: 10px;
 }
 /* .frienditems {
        display: flex;

@@ -74,8 +74,8 @@ const Order = () => {
                     <h5 className='finalPrice'>{total()} sek</h5>
                 </section>
 
-                <section className="addhead" >Delivery Address</section>
-                <section className="form"><Address /></section>
+
+                <div className="form"> <section className="addhead" >Delivery Address</section><Address /></div>
 
 
                 <FriendOrder />

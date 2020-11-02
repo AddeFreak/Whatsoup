@@ -48,10 +48,6 @@ const Checkout = () => {
             <CheckoutHeader>Checkout</CheckoutHeader>
             <GoodChoice />
             <Order></Order>
-
-
-
-
         </>
     )
 }

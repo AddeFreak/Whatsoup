@@ -130,45 +130,55 @@ const OrderSummary = () => {
 
 
             <StyledSummary>
-                <div className='container'>
-                    <h5>YOUR ORDER</h5>
+                <div>
+                    <div className='container'>
+                        <h5>YOUR ORDER</h5>
 
-                    <section className='listItems'>
-                        <h5>{listItems()}</h5>
-                        <h5>{listPrice()}</h5>
+                        <section className='listItems'>
+                            <h5>{listItems()}</h5>
+                            <h5>{listPrice()}</h5>
 
-                    </section>
+                        </section>
 
-                    <section className='totalPrice'>
-                        <h5>PRICE FOR YOU</h5>
-                        <h5 className='finalPrice'>{total()} sek</h5>
-                    </section>
-                    <div className='friendorder'>
-                        {(() => {
-                            if (friend.length > 0) {
-                                return <div className='friendorder'>
-                                    <h5 className='friend'>FRIEND ORDER</h5>
-                                    <div className='frienditems'>
-                                        <h5>{ifFriend()}</h5>
+                        <section className='totalPrice'>
+                            <h5>PRICE FOR YOU</h5>
+                            <h5 className='finalPrice'>{total()} sek</h5>
+                        </section>
+                        <div className='friendorder'>
+                            {(() => {
+                                if (friend.length > 0) {
+                                    return <div className='friendorder'>
+                                        <h5 className='friend'>FRIEND ORDER</h5>
+                                        <div className='frienditems'>
+                                            <h5>{ifFriend()}</h5>
+                                        </div>
+                                        <section className='totalPrice'>
+                                            <h5>PRICE FOR FRIEND</h5>
+                                            <h5 className='total'>{total()} sek</h5>
+                                        </section>
+                                        <section className='totalPrice'>
+                                            <h5 className='tp'>TOTAL PRICE:</h5> <h5 className='final'>{finalPrice()} sek</h5></section>
                                     </div>
-                                    <section className='totalPrice'>
-                                        <h5>PRICE FOR FRIEND</h5>
-                                        <h5 className='total'>{total()} sek</h5>
-                                    </section>
-                                    <section className='totalPrice'>
-                                        <h5 className='tp'>TOTAL PRICE:</h5> <h5 className='final'>{finalPrice()} sek</h5></section>
+                                } else {
+                                    return <p></p>;
+                                }
+                            })()}
+                        </div>
+                        {(() => {
+                            if (address.length > 0) {
+                                return <div >
+                                    <section className="address"> {addressItems()}</section>
                                 </div>
                             } else {
                                 return <p></p>;
                             }
                         })()}
                     </div>
-                    <section className="address"> {addressItems()}</section>
 
                     <MyCards />
                     <section className='cancelOk'>
                         <LinkButton to='/soup' onClick={Cancel}>CANCEL</LinkButton>
-                        <LinkButton to='confirmation'>OK</LinkButton>
+                        <LinkButton to='confirmation'>PAY</LinkButton>
                     </section>
 
                 </div>
