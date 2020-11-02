@@ -21,8 +21,8 @@ const Order = () => {
     const listItems = () => {
         console.log(checkout)
         if (checkout.length > 0) {
-            const allItems = checkout.map(item => (
-                <div key={item.id} >
+            const allItems = checkout.map((item, index) => (
+                <div key={index} >
                     {item.name}
                 </div>
             ))
@@ -34,8 +34,8 @@ const Order = () => {
 
     const listPrice = () => {
         if (checkout.length > 0) {
-            const allItems = checkout.map(item => (
-                <div key={item.id}>
+            const allItems = checkout.map((item, index) => (
+                <div key={index}>
                     {item.price} SEK
                 </div>
             ))

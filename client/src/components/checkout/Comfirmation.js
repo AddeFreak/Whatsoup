@@ -50,7 +50,7 @@ const Comfirmation = () => {
         console.log(address)
         if (address.length > 0) {
             const allItems = address.map(item => (
-                <div key={item.id} >
+                <div className="" key={item.id} >
 
 
 

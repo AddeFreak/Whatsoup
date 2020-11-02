@@ -39,8 +39,10 @@ const Friend = () => {
     }
 
 
-    const handleRemove = (props) => {
-        removeFriendItem()
+    const handleRemove = (product) => {
+        // hitta indexet i arrayen där titeln matcher
+        // filtrera bort elementet där index matchar
+        removeFriendItem(product)
 
         //window.location.reload()
     }
@@ -76,7 +78,7 @@ const Friend = () => {
                         <span>
                             <div>{product.type}</div>
                             <button onClick={(e) => handleAdd(product)}>+</button>
-                            <button onClick={() => handleRemove()}>-</button>
+                            <button onClick={() => handleRemove(product)}>-</button>
                             <div>{product.price}</div>
                         </span>
                     </div>

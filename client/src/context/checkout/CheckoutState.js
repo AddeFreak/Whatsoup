@@ -48,7 +48,7 @@ const CheckoutState = (props) => {
             )
             dispatch({
                 type: ADD_TO_FRIEND,
-                payload: res.data
+                payload: { id: res.data, ...friend }
             })
 
         } catch (err) {
@@ -59,10 +59,11 @@ const CheckoutState = (props) => {
         }
     }
     const getFriend = async () => {
+
         try {
             let res = await axios.get('https://ey-whatsoup.firebaseio.com/friend.json')
 
-            const friendCheckout = [];
+            let friendCheckout = [];
             for (let key in res.data) {
                 friendCheckout.push({
                     ...res.data[key],
@@ -80,19 +81,29 @@ const CheckoutState = (props) => {
             console.log('error - could not get checkout')
         }
     }
-    const removeFriendItem = async (id) => {
-
+    const removeFriendItem = async (product) => {
+        console.log(product.type)
 
 
 
         try {
+            let res = await axios.get('https://ey-whatsoup.firebaseio.com/friend.json')
 
-            await axios.delete(`https://ey-whatsoup.firebaseio.com/friend/.json/`
+            let friendCheckout = [];
+            for (let key in res.data) {
+                friendCheckout.push({
+                    ...res.data[key],
+                    id: key
+                });
+            }
+            let foundIndex = friendCheckout.findIndex(item => item.type == product.type)
+            let IDtoRemove = friendCheckout[foundIndex].id
+            //await axios.delete(`https://ey-whatsoup.firebaseio.com/friend.json`);
+            await axios.delete(`https://ey-whatsoup.firebaseio.com/friend/${IDtoRemove}.json`
             );
 
 
-
-            dispatch({ type: REMOVE_FRIEND_ITEM, payload: id })
+            dispatch({ type: REMOVE_FRIEND_ITEM, payload: { type: product.type, friend: friendCheckout } })
 
         } catch (err) {
             console.log(err);

@@ -30,9 +30,13 @@ export default (state, action) => {
                 address: action.payload
             }
         case REMOVE_FRIEND_ITEM:
+            //action.payload.friend
+            let foundIndex = action.payload.friend.findIndex(item => item.type == action.payload.type)
+            //let newFriend = 
+
             return {
                 ...state,
-                friend: state.friend.filter((product) => product.id !== action.payload),
+                friend: state.friend.filter((product, index) => index !== foundIndex),
             };
         case GET_FRIEND:
             return {
