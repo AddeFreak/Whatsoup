@@ -19,7 +19,10 @@ background-color: #dfd;
     padding-right: 10px;
    padding-left: 10px;
 }
-
+.pricediv{
+    width: 150px;
+    
+}
 .cancelOk {
    display: flex;
    justify-content: space-between;
@@ -74,7 +77,9 @@ input{
    align-items:center;
    background: #fec;
 }
-
+.listItems{
+    font-size:14px;
+}
 form {
      display: flex;
     flex-direction: column;

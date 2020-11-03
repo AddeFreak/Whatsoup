@@ -27,7 +27,7 @@ const ChoiceButt = styled.button`
   flex-wrap: wrap;
   margin: 5px;
   height: 40px;
-  width: 118px;
+  width: 109px;
   font-size: 15px;
   font-weight: 600;
   
