@@ -10,7 +10,7 @@ background-color: #dfd;
     font-size: 18px;
     font-weight: lighter;
     padding-top: 10px; 
-    /* padding-bottom: 10px; */
+  
     margin: 0;
 }
 
@@ -120,7 +120,7 @@ margin-top:7px;
     text-align:center;
  padding: 10px;
    margin-bottom: 30px;
-   background: #dfd;
+   background: #cff;
 }
 .address section {
     font-weight: 300;

@@ -8,8 +8,26 @@ input{
     width: 150px;
     
 }
+`
 
 
+const FriendComponent = styled.div`
+display: flex;
+justify-content:row;
+flex-direction: column;
+
+.type{
+    width: 55px;
+}
+
+.divs{
+display: flex;
+align-items: center;
+justify-content:space-around;
+}
+button{
+   background-color: transparent;
+}
 `
 const Friend = () => {
     const checkoutContext = useContext(CheckoutContext)
@@ -18,10 +36,8 @@ const Friend = () => {
     const products = [
         { type: "Soup", id: 1, price: 50 },
         { type: "Protein", id: 2, price: 30 },
-        { type: "Bread", id: 3, price: 15 },
-        { type: "Spread", id: 4, price: 25 },
-        { type: "Treats", id: 5, price: 15 },
-        { type: "Beverages", id: 6, price: 25 }
+        { type: "Extras", id: 3, price: 15 },
+        { type: "Beverages", id: 4, price: 25 }
     ]
 
     useEffect(() => {
@@ -65,26 +81,41 @@ const Friend = () => {
     return (
         <div className="wrapper">
             <Input>  <div><h1>Which friend is this treasure for?</h1>
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Number" />
+                <input type="text" placeholder=" Name" />
+                <input type="text" placeholder=" Number" />
             </div></Input>
-            <div>
-                Shopping Cart: {friend.length}
-            </div>
-            <div>Total: {total()}</div>
-            <div>
-                {products.map(product => (
-                    <div key={product.id}>
-                        <span>
-                            <div>{product.type}</div>
-                            <button onClick={(e) => handleAdd(product)}>+</button>
-                            <button onClick={() => handleRemove(product)}>-</button>
-                            <div>{product.price}</div>
-                        </span>
-                    </div>
-                ))}
+            <FriendComponent>
 
-            </div>
+                <div >
+                    {products.map(product => (
+                        <div key={product.id}>
+                            <span className="divs">
+                                <div className="type">{product.type}</div>
+                                <button onClick={(e) => handleAdd(product)}>+</button>
+                                <span>
+
+
+                                    {(() => {
+                                        if (product.type == friend.type) {
+                                            return <div >
+                                                <section> {friend + 1}</section>
+                                            </div>
+                                        } else {
+                                            return <p>0</p>;
+                                        }
+                                    })()}
+                                </span>
+                                <button onClick={() => handleRemove(product)}>-</button>
+                                <div>{product.price}</div>
+                            </span>
+                        </div>
+                    ))}
+
+                </div>
+                <div >
+                    Shopping Cart: {friend.length}
+                </div>
+                <div>Total: {total()}</div></FriendComponent>
             <div><h1>Send a message!</h1>
                 <textarea />
             </div>

@@ -4,7 +4,7 @@ import healing from '../../assets/Soups/healing.png'
 import chillie from '../../assets/Soups/chillibillie.png'
 import solong from '../../assets/Soups/solongcold.png'
 import lowcarb from '../../assets/Soups/lowcarb.png'
-import missmuscle from '../../assets/Soups/missmuscle.png'
+import missmuscle from '../../assetscopy/Soups/missmuscle.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
 //import { v4 as uuidv4 } from 'uuid';

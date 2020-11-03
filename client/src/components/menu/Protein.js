@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar'
 import ShowFood from './ShowFood'
-import fried from '../../assets/Protein/friedtofu.png'
-import chicken from '../../assets/Protein/grilledchicken.png'
-import shrimp from '../../assets/Protein/shrimps.png'
-import beef from '../../assets/Protein/beef.png'
+import fried from '../../assetscopy/Protein/friedtofu.png'
+import chicken from '../../assetscopy/Protein/grilledchicken.png'
+import shrimp from '../../assetscopy/Protein/shrimps.png'
+import beef from '../../assetscopy/Protein/beef.png'
 import Alert from '../alert/Alert'
 
 const Protein = () => {

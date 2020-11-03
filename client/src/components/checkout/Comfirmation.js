@@ -11,8 +11,19 @@ display: column;
 text-align: center;
 justify-content: center;
 font-family: Lobster;
-font-size:20px;
-font-weight: 100;
+font-size:25px;
+font-weight: lighter;
+
+div{
+    font-weight: lighter;
+    background: #dfd;
+}
+p{
+    padding-bottom:20px;
+     padding-left: 10px;
+     padding-right: 10px;
+     margin-bottom: 0px;
+}
 h1 {
 margin: 0px;
 padding-top: 20px;
@@ -25,6 +36,8 @@ padding-top: 20px;
      background: #cff;
      padding: 5px;
      height: 100%;
+     padding-left: 10px;
+     padding-right: 10px;
 }
 `
 const Comfirmation = () => {

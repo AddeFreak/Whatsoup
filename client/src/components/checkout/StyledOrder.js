@@ -10,7 +10,7 @@ background-color: #dfd;
     font-size: 18px;
     font-weight: lighter;
     padding-top: 10px; 
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin: 0;
 }
  
@@ -108,7 +108,7 @@ border: 1px solid black;
    border: 1px solid black;
     font-weight: 300;
     text-align:center;
- 
+   background: #cff;
     padding-right: 10px;
    padding-left: 10px;
 }
@@ -116,6 +116,7 @@ border: 1px solid black;
     font-weight: 300;
 }
 .topay{
+    padding-top:10px;
     margin-top: 20px;
 text-align:center;
 font-family: Lobster;

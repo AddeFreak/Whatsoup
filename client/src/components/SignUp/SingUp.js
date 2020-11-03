@@ -45,7 +45,7 @@ input{
  border: 1px solid black;
    border-radius: 5px;
    height: 25px;
- 
+ background-color: transparent;
 } 
 `
 const Whaddap = styled.img`

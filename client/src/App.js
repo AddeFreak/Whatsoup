@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Soup from './components/menu/Soup'
 import Protein from './components/menu/Protein'
-import Bread from './components/menu/Bread'
-import Spreads from './components/menu/Spreads'
-import Treats from './components/menu/Treats'
+
 import Extras from './components/menu/Extras'
 import Beverages from './components/menu/Beverages'
 import Landing from '../src/components/pages/Landing'
@@ -18,7 +16,7 @@ import SignUpLanding from './components/SignUp/SingUp'
 import { withAuthentication } from '../src/components/Session/index';
 
 import AlertState from './context/alert/AlertState'
-import Alert from './components/alert/Alert'
+
 import Checkout from './components/checkout/Checkout'
 //import CheckoutPage from './components/pages/CheckoutPage'
 import Home from './components/pages/Home'
@@ -28,29 +26,7 @@ import AccountPage from '../src/components/Account/index';
 import AdminPage from '../src/components/Admin';
 
 const App = () => {
-  // const [user, setUser] = useState({ loggedIn: false });
-  // if (!user.loggedIn) {
-  //   return <span>User is logged out</span>;
-  // }
-  /*  const [sideDrawerOpen, setSideDrawerOpen] = useState(false)
- 
-   const drawerToggleClickHandler = () => {
-     setSideDrawerOpen(true)
-     console.log('clovked')
-   }
-   const backdropClickHandler = () => {
-     setSideDrawerOpen(false)
-   }
- 
- 
- 
-   let backdrop;
- 
-   if (sideDrawerOpen) {
- 
-     backdrop = <Backdrop click={backdropClickHandler} />
-   }
-  */
+
   return (
 
     <AlertState >
