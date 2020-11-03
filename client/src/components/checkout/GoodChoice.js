@@ -44,8 +44,13 @@ ul {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 0;
-    margin: 3px;
+    margin: 5px;
     padding: 0px 0px 20px 0px;
+    
+}
+li {
+    width: 110px;
+    margin: 3px;
 }
 
 `

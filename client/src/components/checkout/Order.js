@@ -22,7 +22,7 @@ const Order = () => {
         console.log(checkout)
         if (checkout.length > 0) {
             const allItems = checkout.map((item, index) => (
-                <div key={index} >
+                <div className="pricediv" key={index} >
                     {item.name}
                 </div>
             ))

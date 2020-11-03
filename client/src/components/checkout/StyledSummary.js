@@ -10,10 +10,12 @@ background-color: #dfd;
     font-size: 18px;
     font-weight: lighter;
     padding-top: 10px; 
-  
+
     margin: 0;
 }
-
+.listItems{
+font-size:13px;
+}
 .container > h5 {
     margin: 0;
     padding-right: 10px;
@@ -62,6 +64,8 @@ width: 300px;
   margin: 5px;
    padding-left: 10px;
     padding-right: 10px;
+    font-size: 12px;
+     
 }
 .friend{
 font-size: 15px;
