@@ -3,7 +3,7 @@ import Backbutton from '../buttons/Backbutton'
 import LinkButton from '../buttons/LinkButton'
 
 import styled from 'styled-components'
-import DrawerToggleButton from '../Navigation/SideDrawer/DrawerToggleButton'
+
 import Navigation from '../Navigation/index'
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer'
 import Backdrop from '../Backdrop/Backdrop'

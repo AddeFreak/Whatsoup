@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 import * as ROUTES from '../../constants/routes';
 import { withFirebase } from '../Firebase';
 import styled from 'styled-components'
-import Logo from '../../assets/logo.png'
+
 
 const StyledSignup = styled.div`
 

@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useReducer } from 'react'
 //import { v4 as uuidv4 } from 'uuid'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'

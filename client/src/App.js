@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Soup from './components/menu/Soup'
 import Protein from './components/menu/Protein'
@@ -18,7 +18,7 @@ import { withAuthentication } from '../src/components/Session/index';
 import AlertState from './context/alert/AlertState'
 
 import Checkout from './components/checkout/Checkout'
-//import CheckoutPage from './components/pages/CheckoutPage'
+
 import Home from './components/pages/Home'
 import CheckoutState from './context/checkout/CheckoutState'
 import * as ROUTES from '../src/constants/routes'

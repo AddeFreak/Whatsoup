@@ -15,11 +15,9 @@ const FriendComponent = styled.div`
 display: flex;
 justify-content:row;
 flex-direction: column;
-
 .type{
-    width: 55px;
+  
 }
-
 .divs{
 display: flex;
 align-items: center;
@@ -77,6 +75,23 @@ const Friend = () => {
         }
     }
     console.log(friend)
+    const counter = (product) => {
+
+        let quantity = friend.reduce((acc, child) => {
+            if (!acc[child.type]) {
+                acc[child.type] = 0;
+            } acc[child.type]++;
+            return acc;
+        }, {})
+
+        const entries = Object.entries(quantity)
+
+        for (const [food, count] of entries) {
+            if (food === product.type) {
+                return count
+            }
+        }
+    }
 
     return (
         <div className="wrapper">
@@ -92,19 +107,21 @@ const Friend = () => {
                             <span className="divs">
                                 <div className="type">{product.type}</div>
                                 <button onClick={(e) => handleAdd(product)}>+</button>
-                                <span>
 
 
-                                    {(() => {
-                                        if (product.type == friend.type) {
-                                            return <div >
-                                                <section> {friend + 1}</section>
-                                            </div>
-                                        } else {
-                                            return <p>0</p>;
-                                        }
-                                    })()}
-                                </span>
+                                {/*  <div> {counter(product)}</div> */}
+
+                                {(() => {
+                                    if (friend.length > 0) {
+                                        return <div className="type" >
+                                            <p> {counter(product)}</p>
+                                        </div>
+                                    } else {
+                                        return <div className="type" >0</div>;
+                                    }
+                                })()}
+
+
                                 <button onClick={() => handleRemove(product)}>-</button>
                                 <div>{product.price}</div>
                             </span>
