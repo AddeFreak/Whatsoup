@@ -3,7 +3,7 @@
 Whats'oup?
 THE PAGE IS UNDER CONSTRUCTION
 
-But you can have a sneak peak from the first draft here: http://whatsoup.surge.sh/ - obs the page is made in 📱 mobile view 📱 first!
+But you can have a sneak peak from the first draft here: http://whatsoup.surge.sh/ - obs the page is made in mobile view first!
 
 Whats'oup? is a page to buy soups for home delivery. You can add bread, spreads, treats and bevereages to your meal.
 
