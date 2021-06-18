@@ -34,7 +34,7 @@ width:120px;
 
 const FriendOrder = () => {
   const [showResults, setShowResults] = React.useState(false)
-  const onClick = () => setShowResults(true)
+  const onClick = () => setShowResults(!showResults)
 
 
   //bara namn och nummer

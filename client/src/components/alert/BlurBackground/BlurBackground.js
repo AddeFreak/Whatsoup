@@ -1,23 +1,21 @@
-
-import React, { useContext } from 'react'
-import AlertContext from '../../../context/alert/alertContext'
-import styles from './blurBackdrop.module.css'
-
+import React, { useContext } from 'react';
+import AlertContext from '../../../context/alert/alertContext';
+import styles from './blurBackdrop.module.css';
 
 const BlurBackground = () => {
-    const alertContext = useContext(AlertContext)
-    const { removeAlert } = alertContext
+	const alertContext = useContext(AlertContext);
+	const { removeAlert } = alertContext;
 
-    const handleClick = (e) => {
-        e.preventDefault();
-        removeAlert();
-    }
+	const handleClick = (e) => {
+		e.preventDefault();
+		removeAlert();
+	};
 
-    return (
-        <>
-            <div className={styles.BlurBackground} onClick={handleClick} />
-        </>
-    )
+	return (
+		<>
+			<div className={styles.BlurBackground} onClick={handleClick} />
+		</>
+	);
 };
 
 export default BlurBackground;

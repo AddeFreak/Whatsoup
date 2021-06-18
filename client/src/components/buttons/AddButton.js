@@ -1,26 +1,24 @@
-import React, { useContext } from 'react'
-import buttonsStyle from './buttonsStyle.module.css'
-import CheckoutContext from '../../context/checkout/checkoutContext'
+import React, { useContext } from 'react';
+import buttonsStyle from './buttonsStyle.module.css';
+import CheckoutContext from '../../context/checkout/checkoutContext';
 
 const AddButton = (props) => {
+	const checkoutContext = useContext(CheckoutContext);
+	const { addFood } = checkoutContext;
+	const { name, type, price } = props;
 
-    const checkoutContext = useContext(CheckoutContext)
-    const { addFood } = checkoutContext
+	const handleClick = (e) => {
+		e.preventDefault();
+		addFood(type, name, price);
+	};
 
-    const { name, type, price } = props
+	return (
+		<>
+			<button onClick={handleClick} className={buttonsStyle.buttonWithBorder}>
+				ADD
+			</button>
+		</>
+	);
+};
 
-    const handleClick = (e) => {
-        e.preventDefault()
-        //let food = { type, name, price }
-        addFood(type, name, price)
-    }
-
-
-    return (
-        <>
-            <button onClick={handleClick} className={buttonsStyle.buttonWithBorder}>ADD</button>
-        </>
-    )
-}
-
-export default AddButton
+export default AddButton;
