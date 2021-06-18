@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import CheckoutContext from '../../context/checkout/checkoutContext';
-import axios from 'axios';
 
 const ContactForm = () => {
 	const [formData, setFormData] = useState({});

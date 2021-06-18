@@ -1,19 +1,12 @@
-import React from 'react'
-import buttonsStyle from './buttonsStyle.module.css'
+import React from 'react';
+import buttonsStyle from './buttonsStyle.module.css';
 
 const DeleteButton = () => {
+	return (
+		<>
+			<button className={buttonsStyle.buttonWithBorder}>REMOVE</button>
+		</>
+	);
+};
 
-    // delete food from checkout
-    //handleClick={deleteFood}
-    // deleteItem = (e) => {
-    //     e.preventDefault()
-    // }
-
-    return (
-        <>
-            <button className={buttonsStyle.buttonWithBorder}>REMOVE</button>
-        </>
-    )
-}
-
-export default DeleteButton
+export default DeleteButton;
